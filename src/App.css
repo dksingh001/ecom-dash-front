@@ -1,38 +1,337 @@
-.App {
-  text-align: center;
+
+
+nav#header_bg {
+  background: #83c3c3;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul#navbar-center {
+  background: #83c3c3;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.parent_icon {
+    padding: 0px 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+span#Count {
+  position: absolute;
+  top: 0px;
+}
+
+button#user-menu-button {
+  padding: 8px 15px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: sans-serif;
+}
+
+div#user-dropdown {
+  position: absolute;
+  top: 52px;
+  right: 40px;
+}
+
+
+
+ /* <=[======================== Footer =========================>*/
+
+ .div {
+  padding: 7rem 1rem;
+  background-color: rgb(6, 6, 6);
+}
+
+div .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 99.6rem;
+  margin: 0 auto;
+}
+
+.div .col {
   flex-direction: column;
-  align-items: center;
+  color: var(--white);
+  align-items: flex-start;
+}
+
+.div .col:last-child {
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.div .col:last-child span {
+  font-size: 2.5rem;
+  margin-right: 0.5rem;
+  color: var(--white);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.div .col a {
+  color: var(--white);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  font-weight: 300;
+}
+
+.div .col h4 {
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 567px) {
+  div .row {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+
+/* footer */
+
+/* Extra small Device (Mobile Phone) */
+@media screen and (max-width: 575px) {
+  .footerContainer {
+      padding: 8%;
+      background-color: #040E1A;
+      /* display: grid;
+      grid-template-columns: auto auto auto auto; */
+  }
+
+  .gridfooter {
+      margin-top: 30px;
+      color: white;
+  }
+
+  .icans {
+      padding-top: 10px;
+  }
+
+  /* .ican_footer {} */
+
+  .ican_footer #fa {
+      color: yellow;
+  }
+
+  .ican_footer #ican_right {
+      margin-left: 20px;
+  }
+
+}
+
+/* Small Devices (Tablets and Smaller Laptops) */
+
+@media screen and (min-width:576px) and (max-width:991px) {
+  .footerContainer {
+      padding: 8%;
+      background-color: #040E1A;
+      display: grid;
+      grid-template-columns: auto auto;
+  }
+
+  .gridfooter {
+      margin-top: 30px;
+      color: white;
+  }
+
+  .icans {
+      padding-top: 10px;
+  }
+
+  /* .ican_footer {} */
+
+  .ican_footer #fa {
+      color: yellow;
+  }
+
+  .ican_footer #ican_right {
+      margin-left: 20px;
+  }
+}
+
+/* large Devices (Destops) */
+@media screen and (min-width:992px) and (max-width:1199px) {
+  .footerContainer {
+      padding: 8%;
+      background-color: #040E1A;
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+  }
+
+  .gridfooter {
+      color: white;
+  }
+
+  .icans {
+      padding-top: 10px;
+  }
+
+  /* .ican_footer {} */
+
+  .ican_footer #fa {
+      color: yellow;
+  }
+
+  .ican_footer #ican_right {
+      margin-left: 20px;
+  }
+}
+
+/* Extra large devices (high resolution monitors) */
+
+@media screen and (min-width: 1199px) {
+  .footerContainer {
+      padding: 8%;
+      background-color: #040E1A;
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+  }
+
+  .gridfooter {
+      color: white;
+  }
+
+  .icans {
+      padding-top: 10px;
+  }
+
+  /* .ican_footer {} */
+
+  .ican_footer #fa {
+      color: yellow;
+  }
+
+  .ican_footer #ican_right {
+      margin-left: 20px;
+  }
+}
+
+.getin_footer {
+  padding: 0px 0px 22px 0px;
+  display: grid;
+  grid-template-columns: 3rem 14rem;
+}
+
+.footer-ican {
+  font-size: 20px;
+  color: yellow;
+}
+
+/* <============== Home pages========================> */
+
+#middle-images {
+  display: flex;
+  width: 100%;
+  background-color: black;
+
+}
+
+#image_1 {
+  background: url("./components/Assest/img/new1.png");
+  background-size: cover;
+  background-position: center;
+  padding-top: 40%;
+  padding-bottom: 40%;
+  width: 100%;
+
+  margin-right: 2px;
+  margin-bottom: 3px;
+
+  background-repeat: no-repeat;
+
+}
+
+#image_2 {
+  background: url("./components/Assest/img/new1.png");
+  background-size: cover;
+  background-position: center;
+  padding-top: 40%;
+  padding-bottom: 40%;
+  width: 100%;
+  background-repeat: no-repeat;
+  margin-bottom: 3px;
+}
+
+
+
+#image_3 {
+  background: url("./components/Assest/img/new2.png");
+  background-size: cover;
+  background-position: center;
+  padding-top: 40%;
+  padding-bottom: 40%;
+  width: 100%;
+  margin-right: 2px;
+  margin-bottom: 3px;
+  background-repeat: no-repeat;
+}
+
+#image_4 {
+  background: url("./components/Assest/img/new3.png");
+  background-size: cover;
+  background-position: center;
+  padding-top: 40%;
+  padding-bottom: 40%;
+  width: 100%;
+  margin-bottom: 3px;
+  background-repeat: no-repeat;
+}
+
+#image_5 {
+  background: url("./components/Assest/img/new4.png");
+  background-size: cover;
+  background-position: center;
+  padding-top: 40%;
+  padding-bottom: 40%;
+  width: 100%;
+  background-repeat: no-repeat;
+  margin-right: 2px;
+  margin-bottom: 3px;
+}
+
+#image_6 {
+  background: url("./components/Assest/img/new5.png");
+  background-size: cover;
+  background-position: center;
+  padding-top: 40%;
+  padding-bottom: 40%;
+  width: 100%;
+  background-repeat: no-repeat;
+  margin-bottom: 3px;
+}
+
+/* media query */
+
+@media screen and (max-width:768px) {
+  #middle-images {
+      display: block;
+      width: 100%;
+
+  }
+
+  #image_1 {
+      padding-top: 80%;
+      padding-bottom: 80%;
+  }
+
+  #image_2 {
+      padding-top: 80%;
+      padding-bottom: 80%;
+  }
+
+  #image_3 {
+      padding-top: 80%;
+      padding-bottom: 80%;
+  }
+
+  #image_4 {
+      padding-top: 80%;
+      padding-bottom: 80%;
+  }
+
+  #image_5 {
+      padding-top: 80%;
+      padding-bottom: 80%;
+  }
+
+  #image_6 {
+      padding-top: 80%;
+      padding-bottom: 80%;
   }
 }
