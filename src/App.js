@@ -6,6 +6,8 @@ import Home from './components/Pages/home';
 import Shop from './components/Pages/shop';
 import About from './components/Pages/about';
 import Contact from './components/Pages/contact';
+import Login from "./components/Auth/login"
+import Signup from './components/Auth/signup';
 
 
 function App() {
@@ -22,11 +24,14 @@ function App() {
           </Route>
           <Route path="/contact" element={<Contact />}>
           </Route>
+          <Route path='/login' element={<Login />} >
+          </Route>
+          <Route path='/signup' element={<Signup />} >
+          </Route>
         </Routes>
         <Footer />
       </BrowserRouter>
        {/* <Header />
-
        <Footer /> */}
     </>
   );
