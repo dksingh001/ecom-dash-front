@@ -49,7 +49,9 @@ const Navbar = () => {
               onClick={toggleDropdown}
             >
               <span className="sr-only">Open user menu</span>
-              Login
+              <Link to="/login">
+               Login
+              </Link>
             </button>
             {isDropdownVisible && (
               <div
@@ -58,7 +60,9 @@ const Navbar = () => {
               >
                 <div className="px-4 py-3">
                   <span className="block text-sm text-gray-900 dark:text-white">
-                    New Customer?  Sign up
+                    New Customer? <Link to="/signup"> 
+              <span id="signlogin">Sign up</span>
+              </Link>
                   </span>
                 </div>
                 <ul className="py-2" aria-labelledby="user-menu-button">
@@ -80,7 +84,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                     >
                       Whishlist
@@ -88,7 +92,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                     >
                       Gift Card

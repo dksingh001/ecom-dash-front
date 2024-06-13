@@ -398,3 +398,14 @@ input {
 .star {
   color: red;
 }
+
+#spantag {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+#signlogin {
+  color: blue;
+  font-size: 17px;
+  cursor: pointer;
+}
