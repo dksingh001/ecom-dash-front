@@ -1,0 +1,5 @@
+@font-face {
+    font-family: "Bold";
+    src:local("Glory-Bold"),
+    url("./components/font/static/Glory-Bold.ttf") format("truetype");
+}
