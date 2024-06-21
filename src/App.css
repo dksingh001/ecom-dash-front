@@ -211,6 +211,22 @@ div .row {
   color: yellow;
 }
 
+.ican_footer {
+  display: flex;
+  align-items: center;
+}
+
+svg.size-4 {
+  width: 25px;
+}
+
+.gridfooter h3{
+    font-size: 30px;
+    padding: 20px 0px;
+    font-weight: 500;
+    font-family: sans-serif;
+
+}
 /* <============== Home pages========================> */
 
 #middle-images {
