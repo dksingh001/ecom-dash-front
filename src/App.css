@@ -425,3 +425,19 @@ input {
   font-size: 17px;
   cursor: pointer;
 }
+
+.first-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0px;
+}
+
+.all h2{
+font-size: 20px;
+font-weight: 500;
+font-family: sans-serif;
+}
+
+.filter select {
+  padding: 4px 31px;
+}
