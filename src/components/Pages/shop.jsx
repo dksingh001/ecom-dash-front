@@ -1,3 +1,7 @@
+import React from "react";
+import Img from "../Assest/img/new1.png"
+
+
 const shop = () => {
   return (
     <>
@@ -15,6 +19,22 @@ const shop = () => {
                   <option value="">low to high</option>
                   <option value=""> Sort by top Brand </option>
                 </select>
+              </div>
+            </div>
+            <div className="product">
+              <div className="sub_product">
+                <div className="product_img">
+                  <img src={Img} alt="" />
+                </div>
+                <div className="product_name">
+                   <p>name</p>
+                </div>
+                <div className="product_title">
+                  <h1>title</h1>
+                </div>
+                <div className="product_price">
+                  $122
+                </div>
               </div>
             </div>
           </div>
