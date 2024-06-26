@@ -1,6 +1,5 @@
 import React from "react";
-import Img from "../Assest/img/new1.png"
-
+import Img from "../Assest/img/new1.png";
 
 const shop = () => {
   return (
@@ -27,13 +26,101 @@ const shop = () => {
                   <img src={Img} alt="" />
                 </div>
                 <div className="product_name">
-                   <p>name</p>
+                   <h2>boAt Airdopes Supreme</h2>
                 </div>
-                <div className="product_title">
+                {/* <div className="product_title">
                   <h1>title</h1>
-                </div>
+                </div> */}
                 <div className="product_price">
-                  $122
+                  Price: ₹1,499 <span class="discount">₹5,999</span>
+                </div>
+                <div className="product_buttom">
+                 <button>Add to Cart</button>
+                </div>
+              </div>
+              <div className="sub_product">
+                <div className="product_img">
+                  <img src={Img} alt="" />
+                </div>
+                <div className="product_name">
+                   <h2>boAt Airdopes Supreme</h2>
+                </div>
+                {/* <div className="product_title">
+                  <h1>title</h1>
+                </div> */}
+                <div className="product_price">
+                  Price: ₹1,499 <span class="discount">₹5,999</span>
+                </div>
+                <div className="product_buttom">
+                 <button>Add to Cart</button>
+                </div>
+              </div>
+              <div className="sub_product">
+                <div className="product_img">
+                  <img src={Img} alt="" />
+                </div>
+                <div className="product_name">
+                   <h2>boAt Airdopes Supreme</h2>
+                </div>
+                {/* <div className="product_title">
+                  <h1>title</h1>
+                </div> */}
+                <div className="product_price">
+                  Price: ₹1,499 <span class="discount">₹5,999</span>
+                </div>
+                <div className="product_buttom">
+                 <button>Add to Cart</button>
+                </div>
+              </div>
+              <div className="sub_product">
+                <div className="product_img">
+                  <img src={Img} alt="" />
+                </div>
+                <div className="product_name">
+                   <h2>boAt Airdopes Supreme</h2>
+                </div>
+                {/* <div className="product_title">
+                  <h1>title</h1>
+                </div> */}
+                <div className="product_price">
+                  Price: ₹1,499 <span class="discount">₹5,999</span>
+                </div>
+                <div className="product_buttom">
+                 <button>Add to Cart</button>
+                </div>
+              </div>
+              <div className="sub_product">
+                <div className="product_img">
+                  <img src={Img} alt="" />
+                </div>
+                <div className="product_name">
+                   <h2>boAt Airdopes Supreme</h2>
+                </div>
+                {/* <div className="product_title">
+                  <h1>title</h1>
+                </div> */}
+                <div className="product_price">
+                  Price: ₹1,499 <span class="discount">₹5,999</span>
+                </div>
+                <div className="product_buttom">
+                 <button>Add to Cart</button>
+                </div>
+              </div>
+              <div className="sub_product">
+                <div className="product_img">
+                  <img src={Img} alt="" />
+                </div>
+                <div className="product_name">
+                   <h2>boAt Airdopes Supreme</h2>
+                </div>
+                {/* <div className="product_title">
+                  <h1>title</h1>
+                </div> */}
+                <div className="product_price">
+                  Price: ₹1,499 <span class="discount">₹5,999</span>
+                </div>
+                <div className="product_buttom">
+                 <button>Add to Cart</button>
                 </div>
               </div>
             </div>
