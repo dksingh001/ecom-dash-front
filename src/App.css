@@ -1,4 +1,11 @@
-nav#header_bg {
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+
+}
+
+#header_bg {
   background: #83c3c3;
 }
 
@@ -220,13 +227,14 @@ svg.size-4 {
   width: 25px;
 }
 
-.gridfooter h3{
-    font-size: 30px;
-    padding: 20px 0px;
-    font-weight: 500;
-    font-family: sans-serif;
+.gridfooter h3 {
+  font-size: 30px;
+  padding: 20px 0px;
+  font-weight: 500;
+  font-family: sans-serif;
 
 }
+
 /* <============== Home pages========================> */
 
 #middle-images {
@@ -371,6 +379,7 @@ svg.size-4 {
   max-width: 500px;
   width: 100%;
 }
+
 h2 {
   margin-bottom: 20px;
   font-size: 24px;
@@ -420,6 +429,7 @@ input {
   font-weight: 500;
   font-family: sans-serif;
 }
+
 #signlogin {
   color: blue;
   font-size: 17px;
@@ -432,12 +442,66 @@ input {
   padding: 20px 0px;
 }
 
-.all h2{
-font-size: 20px;
-font-weight: 500;
-font-family: sans-serif;
+.all h2 {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: sans-serif;
 }
 
 .filter select {
   padding: 4px 31px;
+}
+
+/* <======shop pages =========> */
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.sub_product {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 350px;
+}
+
+.product_img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product_name h2 {
+  font-size: 1.2em !important;
+  margin: 10px 0 !important;
+}
+
+.product_price {
+  color: #333;
+}
+
+.discount {
+  color: #e74c3c;
+  text-decoration: line-through;
+}
+
+.product_buttom button {
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  margin: 20px 0px;
+}
+
+button:hover {
+  background-color: #2980b9;
 }
