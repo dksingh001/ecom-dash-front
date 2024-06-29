@@ -23,7 +23,7 @@ const signup = () => {
               <div id="">
                 <div className="form-group">
                   <div>
-                    <label for="email">Name <span className="star">*</span></label>
+                    <label for="email">email <span className="star">*</span></label>
                   </div>
                   <div>
                     <input type="email" id="email" name="email" required />
@@ -43,7 +43,7 @@ const signup = () => {
               <div id="">
                 <div className="form-group">
                   <div>
-                    <label for="set_password">Set password <span className="star">*</span></label>
+                    <label for="set_password"> Set password <span className="star">*</span></label>
                   </div>
                   <div>
                     <input
@@ -58,7 +58,7 @@ const signup = () => {
               <div id="">
                 <div className="form-group">
                   <div>
-                    <label for="conform_password">Set password <span className="star">*</span></label>
+                    <label for="conform_password">comform password <span className="star">*</span></label>
                   </div>
                   <div>
                     <input
