@@ -10,13 +10,23 @@ const MainState = (props) => {
 
     const login = async ({email, password}) =>{
      const data = await post(`${baseUrl}/auth/login`, {email, password}, false);
-
-     console.log("data", data)
+    //  console.log("data", data)
      return data;
     }
 
+    const signup = async ({name, phone, email, password, conformpassword})=>{
+      const data = await post(`${baseUrl}/auth/signup`, {name, phone, email, password, conformpassword}, false)
+      return data;
+    }
+
+    const getproducts = async () =>{
+      const data = await get(`${baseUrl}/product/getproduct`, true)
+      return data;
+    }
+
+
     return (
-       <MainContext.Provider value={{login, flag, setflag }}>
+       <MainContext.Provider value={{login, signup, flag, setflag, getproducts }}>
         { props.children }
        </MainContext.Provider>
     );
