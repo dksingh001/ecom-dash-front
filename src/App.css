@@ -36,6 +36,11 @@ div#user-dropdown {
   right: 40px;
 }
 
+.left-side {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
 
 
 /* <=[======================== Footer =========================>*/
