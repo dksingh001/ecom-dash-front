@@ -9,6 +9,13 @@ import About from "./components/Pages/about";
 import Contact from "./components/Pages/contact";
 import Login from "./components/Auth/login";
 import Signup from "./components/Auth/signup";
+import Profile from "./components/Pages/Profile";
+import Order from "./components/Pages/Order";
+import Wishlist from "./components/Pages/Wishlist";
+import Giftcard from "./components/Pages/Giftcard";
+import Cart from "./components/Pages/Cart";
+import Shopdetails from "./components/Pages/shopdetails";
+
 
 function App() {
   return (
@@ -23,6 +30,13 @@ function App() {
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/signup" element={<Signup />}></Route>
+            <Route path="/profile" element={<Profile />}></Route>
+            <Route path="/order" element={<Order />}></Route>
+            <Route path="/wishlist" element={<Wishlist />}></Route>
+            <Route path="/giftcard" element={<Giftcard />}></Route>
+            <Route path="/cart" element={<Cart />}></Route>
+            <Route path="/shopdetails" element={<Shopdetails />}></Route>
+
           </Routes>
           <Footer />
         </BrowserRouter>
