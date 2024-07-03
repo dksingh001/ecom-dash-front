@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Img from "../Assest/img/new1.png";
+import Img from "../Assest/img/second.png";
 import { useMain } from "../../hook/useMain";
 
 const Shop = () => {
@@ -35,7 +35,8 @@ const Shop = () => {
                 </select>
               </div>
             </div>
-            <div className="product">
+            <div className="product-outer">
+              <div className="product">
               <div className="sub_product">
                 <div className="product_img">
                   <img src={Img} alt="" />
@@ -43,15 +44,22 @@ const Shop = () => {
                 <div className="product_name">
                   <h2>boAt Airdopes Supreme</h2>
                 </div>
-                {/* <div className="product_title">
+                <div className="product_title">
                   <h1>title</h1>
-                </div> */}
+                </div>
+                <div className="product_ratting">
+                  <h1>ratting</h1>
+                </div>
                 <div className="product_price">
-                  Price: ₹1,499 <span class="discount">₹5,999</span>
+                <div class="item-details-price">
+                    <p className="price">₹2,399</p>
+                    <p id="discount">₹720</p>
+                    <p className="percentage">60% off</p>
+                  </div>
                 </div>
-                <div className="product_buttom">
+                {/* <div className="product_buttom">
                   <button>Add to Cart</button>
-                </div>
+                </div> */}
               </div>
               <div className="sub_product">
                 <div className="product_img">
@@ -60,15 +68,22 @@ const Shop = () => {
                 <div className="product_name">
                   <h2>boAt Airdopes Supreme</h2>
                 </div>
-                {/* <div className="product_title">
+                <div className="product_title">
                   <h1>title</h1>
-                </div> */}
+                </div>
+                <div className="product_ratting">
+                  <h1>ratting</h1>
+                </div>
                 <div className="product_price">
-                  Price: ₹1,499 <span class="discount">₹5,999</span>
+                <div class="item-details-price">
+                    <p className="price">₹2,399</p>
+                    <p id="discount">₹720</p>
+                    <p className="percentage">60% off</p>
+                  </div>
                 </div>
-                <div className="product_buttom">
+                {/* <div className="product_buttom">
                   <button>Add to Cart</button>
-                </div>
+                </div> */}
               </div>
               <div className="sub_product">
                 <div className="product_img">
@@ -77,15 +92,22 @@ const Shop = () => {
                 <div className="product_name">
                   <h2>boAt Airdopes Supreme</h2>
                 </div>
-                {/* <div className="product_title">
+                <div className="product_title">
                   <h1>title</h1>
-                </div> */}
+                </div>
+                <div className="product_ratting">
+                  <h1>ratting</h1>
+                </div>
                 <div className="product_price">
-                  Price: ₹1,499 <span class="discount">₹5,999</span>
+                <div class="item-details-price">
+                    <p className="price">₹2,399</p>
+                    <p id="discount">₹720</p>
+                    <p className="percentage">60% off</p>
+                  </div>
                 </div>
-                <div className="product_buttom">
+                {/* <div className="product_buttom">
                   <button>Add to Cart</button>
-                </div>
+                </div> */}
               </div>
               <div className="sub_product">
                 <div className="product_img">
@@ -94,15 +116,22 @@ const Shop = () => {
                 <div className="product_name">
                   <h2>boAt Airdopes Supreme</h2>
                 </div>
-                {/* <div className="product_title">
+                <div className="product_title">
                   <h1>title</h1>
-                </div> */}
+                </div>
+                <div className="product_ratting">
+                  <h1>ratting</h1>
+                </div>
                 <div className="product_price">
-                  Price: ₹1,499 <span class="discount">₹5,999</span>
+                <div class="item-details-price">
+                    <p className="price">₹2,399</p>
+                    <p id="discount">₹720</p>
+                    <p className="percentage">60% off</p>
+                  </div>
                 </div>
-                <div className="product_buttom">
+                {/* <div className="product_buttom">
                   <button>Add to Cart</button>
-                </div>
+                </div> */}
               </div>
               <div className="sub_product">
                 <div className="product_img">
@@ -111,15 +140,22 @@ const Shop = () => {
                 <div className="product_name">
                   <h2>boAt Airdopes Supreme</h2>
                 </div>
-                {/* <div className="product_title">
+                <div className="product_title">
                   <h1>title</h1>
-                </div> */}
+                </div>
+                <div className="product_ratting">
+                  <h1>ratting</h1>
+                </div>
                 <div className="product_price">
-                  Price: ₹1,499 <span class="discount">₹5,999</span>
+                <div class="item-details-price">
+                    <p className="price">₹2,399</p>
+                    <p id="discount">₹720</p>
+                    <p className="percentage">60% off</p>
+                  </div>
                 </div>
-                <div className="product_buttom">
+                {/* <div className="product_buttom">
                   <button>Add to Cart</button>
-                </div>
+                </div> */}
               </div>
               <div className="sub_product">
                 <div className="product_img">
@@ -128,15 +164,23 @@ const Shop = () => {
                 <div className="product_name">
                   <h2>boAt Airdopes Supreme</h2>
                 </div>
-                {/* <div className="product_title">
+                <div className="product_title">
                   <h1>title</h1>
-                </div> */}
+                </div>
+                <div className="product_ratting">
+                  <h1>ratting</h1>
+                </div>
                 <div className="product_price">
-                  Price: ₹1,499 <span class="discount">₹5,999</span>
+                <div class="item-details-price">
+                    <p className="price">₹2,399</p>
+                    <p id="discount">₹720</p>
+                    <p className="percentage">60% off</p>
+                  </div>
                 </div>
-                <div className="product_buttom">
+                {/* <div className="product_buttom">
                   <button>Add to Cart</button>
-                </div>
+                </div> */}
+              </div>
               </div>
             </div>
           </div>
