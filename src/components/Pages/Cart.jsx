@@ -1,5 +1,5 @@
 import React from "react";
-import pic from "../../components/Assest/img/fifth.png"
+import pic from "../../components/Assest/img/fifth.png";
 
 const Cart = () => {
   return (
@@ -9,25 +9,71 @@ const Cart = () => {
           <div className="left-caintainer">
             <div className="product-details">
               <div class="cart-item">
-                <img
-                  src={pic}
-                  alt="LEBAS Women Kurta Pant Set"
-                />
-                <div class="item-details">
-                  <h3 id="h3">LEBAS Women Kurta Pant Set</h3>
-                  <p class="price">₹2,399</p>
-                  <p class="discount">₹720 off</p>
+                <div className="item-details-container">
+                  <div className="item-details-img">
+                    <img src={pic} alt="LEBAS Women Kurta Pant Set" />
+                  </div>
+                  <div className="item-details-details">
+                  <div className="item-details-title">
+                    <h3 id="h3">LEBAS Women Kurta Pant Set</h3>
+                  </div>
+                  <div className="item-details-size">
+                    <p id="ss">Size: </p>
+                    <p id="ssl">XL</p>
+                  </div>
+                  <div class="item-details-price">
+                    <p className="price">₹2,399</p>
+                    <p id="discount">₹720</p>
+                    <p className="percentage">60% off</p>
+                  </div>
+                  </div>
+                </div>
+                <div className="item-details-dcrinrsa-re">
+                  <div className="decinr">
+                    <button className="nega">-</button>
+                    <button className="count">1</button>
+                    <button className="pule">+</button>
+                  </div>
+                  <div className="saflete">
+                    <button className="savelater">SAVE FOR LATER</button>
+                  </div>
+                  <div className="remo">
+                    <button className="remove">REMOVE</button>
+                  </div>
                 </div>
               </div>
               <div class="cart-item">
-                <img
-                   src={pic}
-                  alt="PUMA Comfort Slippers"
-                />
-                <div class="item-details">
-                  <h3>PUMA Comfort Slippers</h3>
-                  <p class="price">₹1,565</p>
-                  <p class="discount">₹470 off</p>
+                <div className="item-details-container">
+                  <div className="item-details-img">
+                    <img src={pic} alt="LEBAS Women Kurta Pant Set" />
+                  </div>
+                  <div className="item-details-details">
+                  <div className="item-details-title">
+                    <h3 id="h3">LEBAS Women Kurta Pant Set</h3>
+                  </div>
+                  <div className="item-details-size">
+                    <p id="ss">Size: </p>
+                    <p id="ssl">XL</p>
+                  </div>
+                  <div class="item-details-price">
+                    <p className="price">₹2,399</p>
+                    <p id="discount">₹720</p>
+                    <p className="percentage">60% off</p>
+                  </div>
+                  </div>
+                </div>
+                <div className="item-details-dcrinrsa-re">
+                  <div className="decinr">
+                    <button className="nega">-</button>
+                    <button className="count">1</button>
+                    <button className="pule">+</button>
+                  </div>
+                  <div className="saflete">
+                    <button className="savelater">SAVE FOR LATER</button>
+                  </div>
+                  <div className="remo">
+                    <button className="remove">REMOVE</button>
+                  </div>
                 </div>
               </div>
               <div className="cart-button">
