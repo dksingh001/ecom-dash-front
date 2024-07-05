@@ -458,7 +458,7 @@ input {
 }
 
 /* <======shop pages =========> */
-.product-outer{
+.product-outer {
   padding: 0px 60px;
 }
 
@@ -483,12 +483,12 @@ input {
 }
 
 /* .product_img { */
-  /* max-width: 100%;
+/* max-width: 100%;
   height: auto; */
-  .product_img img{
-    /* max-width: 350px;
+.product_img img {
+  /* max-width: 350px;
     width: 100%; */
-    height: 50vh;
+  height: 50vh;
 }
 
 
@@ -595,7 +595,8 @@ button:hover {
   margin-bottom: 20px;
 }
 
-.detail, .total {
+.detail,
+.total {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -625,19 +626,23 @@ button:hover {
   border-radius: 10px;
   background-color: #ffff;
 }
+
 .cart-button {
   padding: 20px 0px 20px 0px;
 }
-.item-details-container{
-display: flex;
-justify-content: flex-start;
+
+.item-details-container {
+  display: flex;
+  justify-content: flex-start;
 }
+
 .item-details-size {
   display: flex;
   justify-content: flex-start;
   padding: 3px 10px;
 }
-.item-details-title{
+
+.item-details-title {
   padding: 3px 10px;
 }
 
@@ -648,7 +653,7 @@ justify-content: flex-start;
 }
 
 
-p.percentage{
+p.percentage {
   padding: 0px 0px 0px 20px;
 }
 
@@ -661,6 +666,7 @@ h3#h3 {
   font-weight: 500;
   font-family: sans-serif;
 }
+
 #discount {
   text-decoration: line-through;
   padding: 0px 0px 0px 20px;
@@ -671,16 +677,19 @@ h3#h3 {
   justify-content: flex-start;
   padding: 20px 0px;
 }
+
 .decinr {
   padding: 0px 15px 0px 0px;
 }
+
 button.nega {
   padding: 0px 10px;
-  margin:0px 5px 0px 0px ;
+  margin: 0px 5px 0px 0px;
   background-color: white;
   border-radius: 50px;
   border: 0.1px solid;
 }
+
 button.count {
   padding: 0px 10px;
   margin: 0px 5px;
@@ -696,6 +705,7 @@ button.pule {
   border-radius: 50px;
   border: 0.1px solid;
 }
+
 button.savelater {
   font-size: 18px;
   font-weight: 400;
@@ -739,10 +749,12 @@ button.remove {
   flex-wrap: wrap;
   padding: 20px 10px;
 }
-.productImg{
+
+.productImg {
   width: 400px;
   max-width: 100%;
 }
+
 .productImg img {
   width: 400px;
   max-width: 100%;
@@ -801,10 +813,11 @@ button.remove {
   padding: 0px 20px 20px 20px;
 }
 
-.imgcontainer img{
+.imgcontainer img {
   width: 80px;
   height: 100px;
 }
+
 .prtbton {
   display: flex;
   /* justify-content: space-evenly; */
@@ -845,4 +858,26 @@ button.prtbn {
   .productright {
     padding-top: 10px;
   }
+}
+
+
+
+/* <=================About pages=================> */
+.abimg {
+  /* background-image: url("../src/components/Assest/img/fourth.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #8dc7c7;
+  height: 30vh;
+}
+
+.abimg h2 {
+  font-size: 50px;
+  font-weight: 400;
+  font-family: sans-serif;
+  padding: 60px 0px;
+  position: absolute;
+  left: 120px;
+
 }
