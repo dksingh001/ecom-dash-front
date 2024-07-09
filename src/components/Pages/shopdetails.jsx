@@ -8,16 +8,17 @@ const Shopdetails = () => {
   const { getProductById } = useMain(); // Assume this hook fetches a product by ID
   const [product, setProduct] = useState([]);
  
-  console.log(id)
-  console.log(product);
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const data = await getProductById(id);
-        setProduct(data.allproduct);
-        console.log("fetch product:", data.allproduct);
+        if (data) {
+          setProduct(data);
+        }
+        console.log("fetch product:", data);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
     fetchProduct();
@@ -26,7 +27,7 @@ const Shopdetails = () => {
   if (!product) {
     return <div>Loading...</div>;
   }
-
+console.log(product.offer)
   return (
     <>
       <div id="product">
@@ -45,7 +46,7 @@ const Shopdetails = () => {
             </div>
             <div className="productImg">
               <div className="ptimg">
-                <img src={product.image} alt="" />
+                <img src={product.image || pic} alt="" />
               </div>
               <div className="prtbton">
                 <button className="prtatc">ADD TO CARD</button>
@@ -53,7 +54,7 @@ const Shopdetails = () => {
               </div>
             </div>
             <div className="productright">
-              <div className="productname">{product.name}</div>
+              <div className="productname">{product.name} </div>
               <div className="producttitle">{product.title}</div>
               <div className="productprice">
                 <p>Special Price</p>
