@@ -35,7 +35,7 @@ function App() {
             <Route path="/wishlist" element={<Wishlist />}></Route>
             <Route path="/giftcard" element={<Giftcard />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
-            <Route path="/Shopdetails/:_id" element={<Shopdetails />}></Route>
+            <Route path="/Shopdetails/:id" element={<Shopdetails />}></Route>
 
           </Routes>
           <Footer />

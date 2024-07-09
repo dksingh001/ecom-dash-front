@@ -25,10 +25,10 @@ const MainState = (props) => {
     }
   
     const getProductById = async (id) => {
-      const data = await get(`${baseUrl}/product/getproduct/${id}`, true);
+      const data = await get(`${baseUrl}/product/getproductbyId/${id}`, true);
       return data;
     };
-  
+
 
     return (
        <MainContext.Provider value={{login, signup, flag, setflag, getproducts, getProductById }}>
