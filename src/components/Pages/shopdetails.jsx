@@ -13,8 +13,8 @@ const Shopdetails = () => {
     const fetchProduct = async () => {
       try {
         const data = await getProductById(id);
-        if (data) {
-          setProduct(data);
+        if (data.success) {
+          setProduct(data.data);
         }
         console.log("fetch product:", data);
       } catch (error) {
@@ -27,7 +27,9 @@ const Shopdetails = () => {
   if (!product) {
     return <div>Loading...</div>;
   }
-console.log(product.offer)
+
+// console.log(product.price)
+
   return (
     <>
       <div id="product">
