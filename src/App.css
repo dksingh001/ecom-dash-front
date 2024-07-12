@@ -127,7 +127,7 @@ div .row {
 
 /* Small Devices (Tablets and Smaller Laptops) */
 
-@media screen and (min-width:576px) and (max-width:991px) {
+@media screen and (min-width:575px) and (max-width:991px) {
   .footerContainer {
     padding: 8%;
     background-color: #040E1A;
@@ -156,7 +156,7 @@ div .row {
 }
 
 /* large Devices (Destops) */
-@media screen and (min-width:992px) and (max-width:1199px) {
+@media screen and (min-width:991px) and (max-width:1199px) {
   .footerContainer {
     padding: 8%;
     background-color: #040E1A;
