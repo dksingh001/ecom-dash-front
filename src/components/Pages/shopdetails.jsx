@@ -16,7 +16,7 @@ const Shopdetails = () => {
         if (data.success) {
           setProduct(data.data);
         }
-        console.log("fetch product:", data);
+        // console.log("fetch product:", data);
       } catch (error) {
         console.error(error);
       }

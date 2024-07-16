@@ -1,23 +1,53 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useMain } from "../../hook/useMain";
 
-const login = () => {
+
+const Login = () => {
+  const navigate = useNavigate();
+  const { Login } = useMain()
+  const [formdata, setFromData] = useState({name: "", password: "" });
+
+  const handlechange = (e) => {
+    // setFromData((predata) => ({
+    //   ...predata,
+    //   [e.target.value]: e.target.value,
+    // }));
+    const { name, value } = e.target;
+    setFromData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const Submitdata = async(e) => {
+    e.preventDefault();
+    // console.log(formdata)
+  };
+
   return (
     <>
       <div id="form-container">
         <div className="container">
           <div className="sub-container">
             <h2>Login Form</h2>
-            <form action="">
+            <form action="" onClick={Submitdata}>
               <div id="">
                 <div className="form-group">
                   <div>
                     <label for="name">
-                      Email / Password <span className="star">*</span>
+                      Email / name <span className="star">*</span>
                     </label>
                   </div>
                   <div>
-                    <input type="text" id="name" name="name" required />
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      onChange={handlechange}
+                      value={formdata.name}
+                      required
+                    />
                   </div>
                 </div>
               </div>
@@ -32,7 +62,9 @@ const login = () => {
                     <input
                       type="password"
                       id="conform_password"
-                      name="conform_password"
+                      name="password"
+                      onChange={handlechange}
+                      value={formdata.password}
                       required
                     />
                   </div>
@@ -43,9 +75,12 @@ const login = () => {
                   <button type="submit">Login</button>
                 </div>
               </div>
-              <span id="spantag">Don't have an account?  <Link to="/signup"> 
-              <span id="signlogin">Sign up</span>
-              </Link></span>
+              <span id="spantag">
+                Don't have an account?{" "}
+                <Link to="/signup">
+                  <span id="signlogin">Sign up</span>
+                </Link>
+              </span>
             </form>
           </div>
         </div>
@@ -54,4 +89,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

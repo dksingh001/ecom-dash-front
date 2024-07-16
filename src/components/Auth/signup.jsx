@@ -3,13 +3,17 @@ import { Link } from "react-router-dom";
 
 
 const signup = () => {
+
+  const singdata = () =>{
+
+  }
   return (
     <>
       <div id="form-container">
         <div className="container">
           <div className="sub-container">
             <h2>Signup Form</h2>
-            <form action="">
+            <form action="" onSubmit={singdata()}>
               <div id="">
                 <div className="form-group">
                   <div>
