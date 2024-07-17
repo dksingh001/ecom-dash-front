@@ -5,8 +5,8 @@ import { useMain } from "../../hook/useMain";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { Login } = useMain()
-  const [formdata, setFromData] = useState({name: "", password: "" });
+  const { login } = useMain();
+  const [formdata, setFromData] = useState({name:"", password:"" });
 
   const handlechange = (e) => {
     // setFromData((predata) => ({
@@ -23,6 +23,16 @@ const Login = () => {
   const Submitdata = async(e) => {
     e.preventDefault();
     // console.log(formdata)
+    const {name, password} = formdata;
+
+    const data = await login({name, password});
+    if (data && data.ecom_token) {
+      localStorage.setItem("ecomfront_token", JSON.stringify({token:data.token}))
+      console.log("login successfully", data)
+      navigate("/")
+    }else{
+      console.log("login is failed")
+    }
   };
 
   return (
