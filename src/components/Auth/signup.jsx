@@ -5,12 +5,13 @@ import { useMain } from "../../hook/useMain";
 const Signup = () => {
   const navigate = useNavigate;
   const { signup } = useMain();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    set_password: "",
-    conform_password: "",
+    password: "",
+    conformpassword: "",
   });
 
   const handlechange = (e) => {
@@ -24,9 +25,9 @@ const Signup = () => {
   const singdata = async(e) => {
     e.preventDefault(); // Prevent the default form submission
     // console.log(formData);
-    const {name, email, phone, set_password, conform_password} = formData;
+    const {name, email, phone, password, conformpassword} = formData;
 
-    const data = await signup({name, email, phone, set_password, conform_password})
+    const data = await signup({name, email, phone, password, conformpassword})
     if (data) {
       console.log("signup is successfully", data)
       navigate("/")
@@ -103,7 +104,7 @@ const Signup = () => {
               <div id="">
                 <div className="form-group">
                   <div>
-                    <label for="set_password">
+                    <label for="password">
                       {" "}
                       Set password <span className="star">*</span>
                     </label>
@@ -111,10 +112,10 @@ const Signup = () => {
                   <div>
                     <input
                       type="password"
-                      id="set_password"
-                      name="set_password"
+                      id="password"
+                      name="password"
                       onChange={handlechange}
-                      value={formData.set_password}
+                      value={formData.password}
                       required
                     />
                   </div>
@@ -123,17 +124,17 @@ const Signup = () => {
               <div id="">
                 <div className="form-group">
                   <div>
-                    <label for="conform_password">
+                    <label for="conformpassword">
                       comform password <span className="star">*</span>
                     </label>
                   </div>
                   <div>
                     <input
                       type="password"
-                      id="conform_password"
-                      name="conform_password"
+                      id="conformpassword"
+                      name="conformpassword"
                       onChange={handlechange}
-                      value={formData.conform_password}
+                      value={formData.conformpassword}
                       required
                     />
                   </div>
