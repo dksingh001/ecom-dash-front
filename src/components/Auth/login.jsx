@@ -6,7 +6,7 @@ import { useMain } from "../../hook/useMain";
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useMain();
-  const [formdata, setFromData] = useState({name:"", password:"" });
+  const [formdata, setFromData] = useState({email:"", password:""});
 
   const handlechange = (e) => {
     // setFromData((predata) => ({
@@ -23,14 +23,15 @@ const Login = () => {
   const Submitdata = async(e) => {
     e.preventDefault();
     // console.log(formdata)
-    const {name, password} = formdata;
+    const {email, password} = formdata;
 
-    const data = await login({name, password});
-    if (data && data.ecom_token) {
-      localStorage.setItem("ecomfront_token", JSON.stringify({token:data.token}))
+    const data = await login({email, password});
+    if (data && data.token) {
+      localStorage.setItem("ecomtoken", JSON.stringify({token:data.token}))
       console.log("login successfully", data)
       navigate("/")
-    }else{
+    }
+    else{
       console.log("login is failed")
     }
   };
@@ -45,17 +46,17 @@ const Login = () => {
               <div id="">
                 <div className="form-group">
                   <div>
-                    <label for="name">
+                    <label htmlFor="email">
                       Email / name <span className="star">*</span>
                     </label>
                   </div>
                   <div>
                     <input
-                      type="text"
-                      id="name"
-                      name="name"
+                      type="email"
+                      id="email"
+                      name="email"
                       onChange={handlechange}
-                      value={formdata.name}
+                      value={formdata.email}
                       required
                     />
                   </div>
@@ -64,7 +65,7 @@ const Login = () => {
               <div id="">
                 <div className="form-group">
                   <div>
-                    <label for="conform_password">
+                    <label htmlFor="conform_password">
                       Enter your password <span className="star">*</span>
                     </label>
                   </div>

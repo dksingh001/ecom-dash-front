@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useMain } from "../../hook/useMain";
 
 const Signup = () => {
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const { signup } = useMain();
 
   const [formData, setFormData] = useState({
