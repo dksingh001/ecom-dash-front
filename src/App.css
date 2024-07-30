@@ -459,7 +459,7 @@ input {
 
 /* <======shop pages =========> */
 .product-outer {
-  padding: 0px 60px;
+  padding: 0px 40px;
 }
 
 .product {
@@ -471,15 +471,15 @@ input {
 
 .sub_product {
   background-color: #fff;
-  padding: 0px 0px;
-  margin: 0px 10px;
+  padding: 0px 10px;
+  margin: 10px 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   /* margin: 10px;
   padding: 20px; */
   text-align: center;
-  max-width: 233px;
+  max-width: 260px;
   width: 100%;
   cursor: pointer;
 }
@@ -525,9 +525,9 @@ button:hover {
 } */
 
 .wishlistican {
-  padding: 0px 10px;
+  padding: 0px 15px;
   position: relative;
-  top: 34px;
+  top: 15px;
   display: flex;
   justify-content: end;
   cursor: pointer;
