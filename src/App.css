@@ -524,7 +524,14 @@ button:hover {
   background-color: #2980b9;
 } */
 
-
+.wishlistican {
+  padding: 0px 10px;
+  position: relative;
+  top: 34px;
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+}
 
 /* <========Cart============> */
 
