@@ -6,11 +6,11 @@
 }
 
 #header_bg {
-  background: #83c3c3;
+  background: #1c6969;
 }
 
 ul#navbar-center {
-  background: #83c3c3;
+  background: #1c6969;
 }
 
 .parent_icon {
@@ -532,9 +532,15 @@ button:hover {
   justify-content: end;
   cursor: pointer;
 }
+.productmultipleimg {
+  padding: 20px 0px;
+}
 
 /* <========Cart============> */
 
+div#cart-pages {
+  background: #f4f6f6;
+}
 
 .cart-item {
   /* display: flex; */
@@ -592,11 +598,11 @@ button:hover {
 
 .price-details {
   background-color: #ffff;
-  border: 1px solid #e0e0e0;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* border: 1px solid #e0e0e0; */
+  margin: 20px 20px;
+  padding: 20px 20px;
+  /* border-radius: 10px; */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
 }
 
 .price-details h2 {
@@ -628,11 +634,11 @@ button:hover {
 }
 
 .product-details {
-  padding: 20px;
-  margin: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
+  padding: 20px 20px;
+  margin: 20px 20px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  /* border: 1px solid #e0e0e0; */
+  /* border-radius: 10px; */
   background-color: #ffff;
 }
 
@@ -671,7 +677,7 @@ p#ssl {
 }
 
 h3#h3 {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 500;
   font-family: sans-serif;
 }
@@ -746,9 +752,9 @@ button.remove {
   /* display: flex;
   flex-direction: column; */
   border: 1px solid #e0e0e0;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   /* overflow: hidden; */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
   background-color: #fff;
 }
 
@@ -869,7 +875,165 @@ button.prtbn {
   }
 }
 
+/* <============ Wishlist================> */
+.whctainr {
+  padding: 30px 140px;
+  background-color: #f4f6f6;
+}
+.wi_scoter {
+  width: 100%;
+  display: flex;
+}
+.lftsde {
+  width: 25%;
+}
+.rghtsde {
+  width: 75%;
+}
 
+.lft_pofle {
+  background-color: white;
+  padding: 20px 10px;
+  margin: 10px 0px;
+  display: flex;
+}
+
+.lftmordr {
+  background-color: white;
+  padding: 20px 10px;
+  margin: 3px 0px;
+  display: flex;
+  justify-content: flex-start;
+}
+.lftacontsting {
+  background-color: white;
+  padding: 20px 10px;
+  margin: 3px 0px;
+}
+
+.lftactcont {
+  padding: 15px 0px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.lftpymt {
+  background-color: white;
+  padding: 20px 10px;
+  margin: 3px 0px;
+}
+
+.lftcont {
+  padding: 15px 0px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.lftstff {
+  background-color: white;
+  padding: 20px 10px;
+  margin: 3px 0px;
+}
+
+.lftsffcont {
+  padding: 15px 0px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.lftlgot {
+  background-color: white;
+  padding: 20px 10px;
+  margin: 3px 0px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.rgth {
+  background-color: white;
+  padding: 20px 10px;
+  margin: 10px 20px;
+}
+
+.rgtpc {
+  background-color: white;
+  padding: 20px 40px;
+  margin: 3px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rgdt {
+  padding: 0px 20px;
+  cursor: pointer;
+}
+
+.rgctp {
+  display: flex;
+}
+.rgspiz {
+  display: flex;
+  align-items: center;
+}
+.lft_pofle {
+  background-color: white;
+  padding: 20px 10px;
+  margin: 10px 0px;
+  display: flex;
+}
+
+.lftpfleig {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+.lftpfleig img{
+  border-radius: 50%;
+}
+.lft_txt {
+  padding: 10px 25px;
+}
+
+p#ho {
+  font-size: 15px;
+  font-weight: 300;
+  font-family: sans-serif;
+}
+
+.lft_txt #pfn {
+  font-size: 25px;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+
+.rgth #rgh{
+font-size: 20px;
+font-weight: 500;
+font-family: sans-serif;
+line-height: 15px;
+padding: 10px 20px;
+}
+
+svg.size-6 {
+  width: 20px;
+}
+
+
+
+.lftordrtxt, .lftconttxt, .lftpymttxt, .lftsffttxt, .lftlogt{
+  padding: 0px 30px;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: sans-serif;
+}
+
+.lftpoifo, .lftpoads, .lftgtcd, .lftspi, .lftsffmtcopn, .lftsffnti, .lftsffrera, .lftsffwit, .lftpopai, .lftscds {
+  padding-left: 50px;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 8px 0px;
+  font-family: sans-serif;
+}
 
 /* <=================About pages=================> */
 .abimg {
