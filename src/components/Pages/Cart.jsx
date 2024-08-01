@@ -1,5 +1,5 @@
 import React from "react";
-import pic from "../../components/Assest/img/fifth.png";
+import pic from "../../components/Assest/img/animation.png";
 
 const Cart = () => {
   return (
