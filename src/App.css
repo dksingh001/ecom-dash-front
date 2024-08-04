@@ -42,6 +42,15 @@ div#user-dropdown {
   gap: 10px;
 }
 
+.phitxt {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.hpptxt {
+  padding: 0px 15px;
+}
+
 
 /* <=[======================== Footer =========================>*/
 
@@ -1052,4 +1061,51 @@ svg.size-6 {
   padding: 60px 0px;
   position: absolute;
   left: 120px;
+}
+
+.psinpp, .psaddppp, .psamnppp, .psligdr {
+  padding: 20px 10px;
+  margin: 10px 20px;
+}
+.pslin, .psaddml,  .psmnml {
+  display: flex;
+  justify-content: start;
+}
+
+.pslihgdit, .psmngdit {
+  padding: 0px 20px;
+}
+
+.pslinipt {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.pslinitlirn {
+  padding: 0px 10px;
+}
+
+.pslihgipt, .pslimnipt {
+  width: 30%;
+}
+
+.psligj {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 15px 0px;
+}
+
+.psligf {
+  padding: 0px 20px;
+}
+
+.psligm  input[type="radio"], .psligf input[type="radio"] {
+  cursor: not-allowed;
+}
+
+input#first-name, input#last-name, input#email, input#number {
+  border: none;
+  height: 50px;
+  cursor: not-allowed;
 }
