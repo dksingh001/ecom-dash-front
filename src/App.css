@@ -1109,3 +1109,23 @@ input#first-name, input#last-name, input#email, input#number {
   height: 50px;
   cursor: not-allowed;
 }
+
+
+/* <------------ Order ---------------> */
+.olrspp {
+  display: flex;
+  justify-content: start;
+  max-width: 1440px;
+  width: 100%;
+  padding: 20px 10px;
+}
+
+.olrlflr {
+  max-width: 300px;
+  width: 100%;
+}
+
+.olrRsl {
+  max-width: 1140px;
+  width: 100%;
+}
