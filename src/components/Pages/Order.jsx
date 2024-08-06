@@ -9,79 +9,79 @@ const Order = () => {
         <div className="olrspp">
           <div className="olrlflr">
             <div className="olrLftxt">
-              <h1> Filters </h1>
+              <h1 id="fill"> Filters </h1>
             </div>
             <div className="olrLodrst">
               <div className="olrLOStxt">
-                <h3> ORDER STATUS </h3>
+                <h3 id="odr"> ORDER STATUS </h3>
               </div>
               <div className="olrLCI">
                 <div className="olrLI">
                   <input type="checkbox" name="status" value="on-the-way" />
                 </div>
                 <div className="olrLItxt">
-                  <p> On the way </p>
+                  <p id="ost"> On the way </p>
                 </div>
               </div>
-              <div className="olrLI">
-                <div>
+              <div className="olrLCI">
+                <div className="olrLI">
                   <input type="checkbox" name="status" value="delivered" />
                 </div>
                 <div className="olrLItxt">
-                  <p> Delivered </p>
+                  <p id="ost"> Delivered </p>
                 </div>
               </div>
-              <div className="olrLI">
-                <div>
+              <div className="olrLCI">
+                <div className="olrLI">
                   <input type="checkbox" name="status" value="cancelled" />
                 </div>
                 <div className="olrLItxt">
-                  <p> Cancelled </p>
+                  <p id="ost"> Cancelled </p>
                 </div>
               </div>
-              <div className="olrLI">
-                <div>
+              <div className="olrLCI">
+                <div className="olrLI">
                   <input type="checkbox" name="status" value="returned" />
                 </div>
                 <div className="olrLItxt">
-                  <p> Returned </p>
+                  <p id="ost"> Returned </p>
                 </div>
               </div>
             </div>
             <div className="olrLodrT">
               <div className="olrLOTtxt">
-                <h3> ORDER TIME </h3>
+                <h3 id="ord"> ORDER TIME </h3>
               </div>
               <div className="olrLCI">
                 <div className="olrLI">
                   <input type="checkbox" name="time" value="last-30-days" />
                 </div>
                 <div className="olrLItxt">
-                  <p> Last 30 days </p>
+                  <p id="ost"> Last 30 days </p>
                 </div>
               </div>
-              <div className="olrLI">
-                <div>
+              <div className="olrLCI">
+                <div className="olrLI">
                   <input type="checkbox" name="time" value="2024" />
                 </div>
                 <div className="olrLItxt">
-                  <p> 2024 </p>
+                  <p id="ost"> 2024 </p>
                 </div>
               </div>
-              <div className="olrLI">
-                <div>
+              <div className="olrLCI">
+                <div className="olrLI">
                   <input type="checkbox" name="time" value="2023" />
                 </div>
                 <div className="olrLItxt">
-                  <p> 2023 </p>
+                  <p id="ost"> 2023 </p>
                 </div>
               </div>
-              <div className="olrLI">
-                <div>
+              <div className="olrLCI">
+                <div className="olrLI">
                   <input type="checkbox" name="time" value="2022" />
                 </div>
                 <div className="olrLItxt">
-                  <p> 2022 </p>
+                  <p id="ost"> 2022 </p>
                 </div>
               </div>
             </div>

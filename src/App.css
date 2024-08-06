@@ -1066,6 +1066,7 @@ svg.size-6 {
 .psinpp, .psaddppp, .psamnppp, .psligdr {
   padding: 20px 10px;
   margin: 10px 20px;
+  background-color: white;
 }
 .pslin, .psaddml,  .psmnml {
   display: flex;
@@ -1112,6 +1113,11 @@ input#first-name, input#last-name, input#email, input#number {
 
 
 /* <------------ Order ---------------> */
+.olrpp {
+  background-color: #f4f6f6;
+  padding: 10px 20px;
+}
+
 .olrspp {
   display: flex;
   justify-content: start;
@@ -1123,9 +1129,64 @@ input#first-name, input#last-name, input#email, input#number {
 .olrlflr {
   max-width: 300px;
   width: 100%;
+  max-width: 300px;
+  width: 100%;
+  padding: 0px 0px;
+  margin: 0px 20px 0px 0px;
 }
 
 .olrRsl {
   max-width: 1140px;
   width: 100%;
+}
+
+.olrLftxt #fill{
+  font-size: 30px;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+.olrLftxt {
+  padding: 10px 20px;
+  margin: 5px 0px;
+  background-color: white;
+}
+
+.olrLOStxt, .olrLOTtxt{
+  padding: 10px 20px;
+  margin: 5px 0px;
+  background-color: white;
+}
+
+.olrLOStxt #odr, .olrLOTtxt #ord{
+  font-size: 15px;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+
+.olrLodrst, .olrLodrT {
+  background-color: white;
+  padding: 10px 0px;
+  margin: 0px 0px 5px 0px;
+}
+.olrLCI {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 5px 20px;
+}
+.olrLI {
+  display: flex;
+  align-items: center;
+}
+.olrLItxt {
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+}
+
+#ost{
+  font-size: 15px;
+  font-weight: 500;
+  font-family: sans-serif;
 }
