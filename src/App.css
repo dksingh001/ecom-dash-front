@@ -1190,3 +1190,52 @@ input#first-name, input#last-name, input#email, input#number {
   font-weight: 500;
   font-family: sans-serif;
 }
+
+.olrRss {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  max-width: 1140px;
+  width: 100%;
+  padding: 10px 0px;
+}
+.olrRssi {
+  max-width: 1100px;
+  width: 100%;
+}
+
+.olrRsB {
+  max-width: 200px;
+  width: 100%;
+  background: black;
+  color: white;
+}
+button.search-button {
+  padding: 5.5px 14px;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+input.search-input {
+  padding: 8px 20px;
+  border: none;
+}
+
+.olsRslit {
+  display: flex;
+  justify-content: start;
+  padding: 20px 0px;
+  background: white;
+  margin: 10px 0px;
+}
+.olsRslit1t {
+  display: flex;
+  justify-content: space-between;
+}
+.olsRsIg, .olsRstxt {
+  padding: 0px 20px;
+}
+
+.olsRslit2d {
+  padding: 0px 30px;
+}
