@@ -105,7 +105,7 @@ const Order = () => {
                   <img src={pic} alt="" style={{width:"100px"}}/>
                 </div>
                 <div className="olsRstxt">
-                  <h2>boAt wave Elite with 1.69" HD Display, 7....</h2>
+                  <span>boAt wave Elite with 1.69" HD Display, 7....</span>
                   <div className="olsRsCS">
                     <div className="olsRsC">
                       Color: Active Black
@@ -131,7 +131,7 @@ const Order = () => {
                   <img src={pic} alt="" style={{width:"100px"}}/>
                 </div>
                 <div className="olsRstxt">
-                  <h2>boAt wave Elite with 1.69" HD Display, 7....</h2>
+                  <span>boAt wave Elite with 1.69" HD Display, 7....</span>
                   <div className="olsRsCS">
                     <div className="olsRsC">
                       Color: Active Black
