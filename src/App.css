@@ -590,7 +590,7 @@ div#cart-pages {
 }
 
 .cart-button button {
-  display: block;
+  /* display: block; */
   width: 50%;
   padding: 15px;
   background-color: black;
@@ -653,6 +653,8 @@ div#cart-pages {
 
 .cart-button {
   padding: 20px 0px 20px 0px;
+  display: flex;
+  justify-content: end;
 }
 
 .item-details-container {
@@ -1105,7 +1107,7 @@ svg.size-6 {
   cursor: not-allowed;
 }
 
-input#first-name, input#last-name, input#email, input#number {
+input#first-name, input#last-name, input#email01, input#number {
   border: none;
   height: 50px;
   cursor: not-allowed;

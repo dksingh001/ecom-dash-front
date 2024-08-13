@@ -188,7 +188,7 @@ const Profile = () => {
                 <div className="pslihgipt">
                   <input
                     type="email"
-                    id="email"
+                    id="email01"
                     value="dkadesh1999@gmail.com"
                     readOnly
                   />
