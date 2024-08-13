@@ -15,6 +15,7 @@ import Wishlist from "./components/Pages/Wishlist";
 import Giftcard from "./components/Pages/Giftcard";
 import Cart from "./components/Pages/Cart";
 import Shopdetails from "./components/Pages/shopdetails";
+import PrivateRoute from "./privateRoute/PrivateRoute";
 
 
 function App() {
@@ -24,6 +25,19 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
+            <Route to={PrivateRoute}>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/shop" element={<Shop />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/profile" element={<Profile />}></Route>
+            <Route path="/order" element={<Order />}></Route>
+            <Route path="/wishlist" element={<Wishlist />}></Route>
+            <Route path="/giftcard" element={<Giftcard />}></Route>
+            <Route path="/cart" element={<Cart />}></Route>
+            <Route path="/Shopdetails/:id" element={<Shopdetails />}></Route>
+            </Route>
+            
             <Route path="/" element={<Home />}></Route>
             <Route path="/shop" element={<Shop />}></Route>
             <Route path="/about" element={<About />}></Route>
