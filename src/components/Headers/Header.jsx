@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { useMain } from "../../hook/useMain";
 
 
 const Navbar = () => {
   const auth = localStorage.getItem("ecomtoken");
   const navigate = useNavigate();
-  const getUserDetails = useMain()
+  const { getUserdetailsbyId } = useMain();
 
   const [isDropdownVisible, setDropdownVisible] = useState(false);
-  const [User, SetUser] = useState([])
+  const [User, SetUser] = useState({});
 
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
@@ -20,24 +20,38 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const logout = () =>{
+  const logout = () => {
     localStorage.clear();
-    navigate("/login")
-  }
-  
-  
-  useEffect(()=>{
-    const fetchdata = async() =>{
-      try {
-      const data = await getUserDetails()
-      SetUser(data.userData)
-      console.log(data.userData)
-      } catch (error) {
-        console.log(error)
+    navigate("/login");
+  };
+
+  useEffect(() => {
+    const fetchdata = async () => {
+      const userId = localStorage.getItem("userId");
+      // console.log(userId);
+      if (!userId) {
+        console.error("User ID is undefined");
+        return;
       }
-    }
-    fetchdata()
-  }, [getUserDetails])
+
+      try {
+        const data = await getUserdetailsbyId(userId);
+
+        if (data.success) {
+          SetUser(data.data);
+        } else {
+          console.log("Failed to fetch user data", data.message);
+        }
+        // console.log("User data", data);
+        
+      } catch (error) {
+        console.log("Error fetching user data", error);
+      }
+    };
+    fetchdata();
+  }, [getUserdetailsbyId]);
+
+  // console.log(User.name); // Check if the User object is populated
   return (
     <>
       <nav className="bg-white border-gray-200 dark:bg-zinc-900" id="header_bg">
@@ -423,7 +437,14 @@ const Navbar = () => {
                   onClick={toggleDropdown}
                 >
                   <span className="sr-only">Open user menu</span>
-                  <Link to="/login">Login</Link>
+
+                  {User ? (
+                    <>{User.name}</>
+                  ) : (
+                    <Link to="/login">
+                      <>Login</>
+                    </Link>
+                  )}
                 </button>
 
                 {isDropdownVisible && (
@@ -431,14 +452,15 @@ const Navbar = () => {
                     className="z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
                     id="user-dropdown"
                   >
-                    <div className="px-4 py-3">
+                    {/* <div className="px-4 py-3">
                       <span className="block text-sm text-gray-900 dark:text-white">
                         New Customer?{" "}
                         <Link to="/signup">
                           <span id="signlogin">Sign up</span>
                         </Link>
                       </span>
-                    </div>
+                    </div> */}
+
                     <ul className="py-2" aria-labelledby="user-menu-button">
                       <li>
                         <a
@@ -574,8 +596,8 @@ const Navbar = () => {
             </>
           ) : (
             <>
-             {/* left logo  */}
-             <div className="left-side">
+              {/* left logo  */}
+              <div className="left-side">
                 <button
                   data-collapse-toggle="navbar-user"
                   type="button"
@@ -708,6 +730,7 @@ const Navbar = () => {
                         </Link>
                       </span>
                     </div>
+
                     <ul className="py-2" aria-labelledby="user-menu-button">
                       <li>
                         <a

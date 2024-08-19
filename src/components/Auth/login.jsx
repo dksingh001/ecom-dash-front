@@ -26,13 +26,19 @@ const Login = () => {
     const {email, password} = formdata;
 
     const data = await login({email, password});
-    if (data && data.token) {
-      localStorage.setItem("ecomtoken", JSON.stringify({token:data.token}))
-      console.log("login successfully", data)
-      navigate("/")
-    }
-    else{
-      console.log("login is failed")
+    try {
+      if (data && data.token) {
+        const { id } = data.user;
+        localStorage.setItem("ecomtoken", JSON.stringify({token:data.token}))
+        // console.log("login successfully", data)
+        localStorage.setItem("userId", id)
+        navigate("/")
+      }
+      else{
+        console.log("login is failed")
+      }
+    } catch (error) {
+      console.log("Error during login:", error);
     }
   };
 
