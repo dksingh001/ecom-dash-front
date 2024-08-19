@@ -12,7 +12,7 @@ const Shop = () => {
       try {
         const data = await getproducts();
         setProducts(data.allproduct);
-        console.log("fetch products:", data.allproduct);
+        // console.log("fetch products:", data.allproduct);
       } catch (error) {
         console.log(error);
       }

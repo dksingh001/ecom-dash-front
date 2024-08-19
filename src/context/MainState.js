@@ -29,14 +29,18 @@ const MainState = (props) => {
       return data;
     };
 
-    const getUserDetails = async (id) => {
+    const getUserDetails = async () => {
       const data = await get(`${baseUrl}/auth/get`, true);
       return data;
     }
 
+    const getUserdetailsbyId = async(id) =>{
+      const data = await get(`${baseUrl}/auth/get/${id}`, true)
+      return data;
+    }
 
     return (
-       <MainContext.Provider value={{login, signup, flag, setflag, getproducts, getProductById, getUserDetails }}>
+       <MainContext.Provider value={{login, signup, flag, setflag, getproducts, getProductById, getUserDetails, getUserdetailsbyId }}>
         { props.children }
        </MainContext.Provider>
     );
