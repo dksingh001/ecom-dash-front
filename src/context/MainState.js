@@ -38,9 +38,38 @@ const MainState = (props) => {
       const data = await get(`${baseUrl}/auth/get/${id}`, true)
       return data;
     }
+    
+    const addtocart = async(id) => {
+      const data = await post (`${baseUrl}/api/cw/addtocart/${id}`, true)
+      return data;
+    }
 
+  const deletecartItem = async(id) =>{
+    const data = await delete(`${baseUrl}/api/cw/removefromcart/${id}`, true)
+    return data;
+  } 
+
+  const fetchallcartItem = async() =>{
+    const data = await get(`${baseUrl}/api/cw/fetchallcartItem`, true)
+    return data;
+  }
+
+  const addtowishlist = async(id)=>{
+    const data = await post(`${baseUrl}/api/cw/addtowishlist/${id}`, true)
+    return data;
+  }
+
+  const deletewishlistItem = async(id) =>{
+    const data = await delete(`${baseUrl}/api/cw/removefromwishlist/${id}`, true)
+    return data;
+  }
+
+  const fetchallwishlist = async(id) =>{
+    const data = await get(`${baseUrl}/api/cw/fetchallwishlistItem`, true)
+    return data;
+  }
     return (
-       <MainContext.Provider value={{login, signup, flag, setflag, getproducts, getProductById, getUserDetails, getUserdetailsbyId }}>
+       <MainContext.Provider value={{login, signup, flag, setflag, getproducts, getProductById, getUserDetails, getUserdetailsbyId, addtocart, deletecartItem, fetchallcartItem, addtowishlist, deletewishlistItem, fetchallwishlist }}>
         { props.children }
        </MainContext.Provider>
     );
