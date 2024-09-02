@@ -2,17 +2,18 @@ import React, { useState, useEffect } from "react";
 import pic from "../Assest/img/new.png";
 import { useParams } from "react-router-dom";
 import { useMain } from "../../hook/useMain";
+import rightlogo from "../../components/Assest/img/right arrow.jpg";
 
 const Shopdetails = () => {
   const { id } = useParams();
-  const { getProductById } = useMain(); // Assume this hook fetches a product by ID
+  const { getProductById, addtocart } = useMain(); // Assume this hook fetches a product by ID
   const [product, setProduct] = useState([]);
-
+//  console.log(id)
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const data = await getProductById(id);
-        if (data.success) {
+        if ( data.success) {
           setProduct(data.data);
         }
         // console.log("fetch product:", data);
@@ -28,6 +29,25 @@ const Shopdetails = () => {
   }
 
   // console.log(product.price)
+
+  const AddtoCart = async () => {
+    try {
+      const response = await addtocart(id); // Assuming `addtocart` is a function from your `useMain` hook that takes the product ID
+      console.log(response)
+      if (response && response.success) {
+        console.log("Product added to cart successfully")
+         // You can trigger a state update or navigate to the cart page here if needed
+      } else {
+        console.log("Failed to add product to cart")
+      }
+    } catch (error) {
+      console.log("Error adding to product to cart", error)
+    }
+  };
+
+  const BuyNow = async () =>{
+
+  }
 
   return (
     <>
@@ -68,23 +88,56 @@ const Shopdetails = () => {
                 <img src={product.image || pic} alt="" />
               </div>
               <div className="prtbton">
-                <button className="prtatc">ADD TO CARD</button>
-                <button className="prtbn">BUY NOW</button>
+                <button className="prtatc" onClick={AddtoCart}>
+                  ADD TO CARD
+                </button>
+                <button className="prtbn" onClick={BuyNow}>BUY NOW</button>
               </div>
             </div>
             <div className="productright">
+              <div className="productpath">
+                Home <img src={rightlogo} id="pig" /> Shop{" "}
+                <img src={rightlogo} id="pig" /> shopdetails
+              </div>
               <div className="productname">{product.name} </div>
               <div className="producttitle">{product.title}</div>
               <div className="productprice">
-                <p>Special Price</p>
+                <p id="sps">Special Price</p>
                 <div className="product-details-price">
-                  <p className="price">₹ {product.price}</p>
-                  <p id="discount">₹720</p>
+                  <p className="pricess">₹ {product.price}</p>
+                  <p id="discount">₹ {product.price} </p>
                   <p className="percentage">60% off</p>
                 </div>
               </div>
-              <div className="productrating">ratting</div>
-              <div className="productsize">size</div>
+              <div className="productrating">
+                <div className="ptrtg">{product.ratings}</div>
+                <div className="ptrtgi">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              {product.size ? (
+                <>
+                  <div className="productsize">
+                    <div className="pdth">Size</div>
+                    <div className="pdts">{product.size}</div>
+                  </div>
+                </>
+              ) : (
+                <> </>
+              )}
               <div className="productOffers">Available offers</div>
             </div>
           </div>

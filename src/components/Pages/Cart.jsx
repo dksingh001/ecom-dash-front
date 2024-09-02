@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import pic from "../../components/Assest/img/animation.png";
+import {useMain} from "../../hook/useMain"
 
 const Cart = () => {
+  const {fetchallcartItem} = useMain();
+  const [cart, setCart] = useState([])
+
+  useEffect (()=>{
+  const FetchcartItem = async() =>{
+    try {
+      const data = await fetchallcartItem();
+      if (data.success) {
+        setCart(data.cart)
+      }
+    } catch (error) {
+      console.error("Error fetching cart Items")
+    }
+
+  }
+  FetchcartItem()
+  }, [fetchallcartItem])
+  console.log(cart)
+
   return (
     <>
       <div id="cart-pages">

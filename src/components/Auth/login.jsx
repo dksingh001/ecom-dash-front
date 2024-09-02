@@ -29,7 +29,7 @@ const Login = () => {
     try {
       if (data && data.token) {
         const { id } = data.user;
-        localStorage.setItem("ecomtoken", JSON.stringify({token:data.token}))
+        localStorage.setItem("ecomtoken", JSON.stringify({token:data.token}));
         // console.log("login successfully", data)
         localStorage.setItem("userId", id)
         navigate("/")
