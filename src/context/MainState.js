@@ -40,12 +40,12 @@ const MainState = (props) => {
     }
     
     const addtocart = async(id) => {
-      const data = await post (`${baseUrl}/api/cw/addtocart/${id}`, true)
+      const data = await post (`${baseUrl}/api/cw/addtocart/${id}`)
       return data;
     }
 
   const deletecartItem = async(id) =>{
-    const data = await delete(`${baseUrl}/api/cw/removefromcart/${id}`, true)
+    const data = await deletereq(`${baseUrl}/api/cw/removefromcart/${id}`, true)
     return data;
   } 
 

@@ -37,7 +37,24 @@ export const post = async (url, body, authflag) => {
       const token = JSON.parse(localStorage.getItem("ecomtoken"))?.token;
       if (token) headers["Authorization"] = `Bearer ${token}`;
     }
+    // let headers = { "Content-Type": "application/json" };
 
+    // if (authflag) {
+    //   const tokenData = localStorage.getItem("ecomtoken");
+    //   let token;
+
+    //   // Safely parse JSON
+    //   if (tokenData) {
+    //     try {
+    //       token = JSON.parse(tokenData)?.token;
+    //     } catch (e) {
+    //       console.error("Invalid JSON format in localStorage for ecomtoken", e);
+    //     }
+    //   }
+
+    //   if (token) headers["Authorization"] = `Bearer ${token}`;
+    // }
+    
     // if (authflag) {
     //   headers["jwt"] = JSON.parse(
     //     localStorage.getItem("ecomtoken")

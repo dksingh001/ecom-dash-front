@@ -7,6 +7,9 @@
 
 #header_bg {
   background: #1c6969;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 ul#navbar-center {
@@ -540,9 +543,12 @@ button:hover {
   display: flex;
   justify-content: end;
   cursor: pointer;
+  z-index: 1;
 }
 .productmultipleimg {
-  padding: 20px 0px;
+      padding: 20px 0px;
+      max-width: 150px;
+      width: 100%;
 }
 
 /* <========Cart============> */
@@ -601,7 +607,7 @@ div#cart-pages {
 }
 
 .cart-button button:hover {
-  background-color: #e68900;
+  background-color: #388e3c;
 }
 
 
@@ -753,10 +759,14 @@ button.remove {
 
 /* <=============== Shodetails pages ===================> */
 #product {
-  max-width: 1200px;
+  /* max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; */
+  /* max-width: 1520px; */
+    width: 100%;
+    padding: 10px 50px;
+    background: #e0e0e0;
 }
 
 .productde {
@@ -784,13 +794,15 @@ button.remove {
 .productImg img {
   width: 400px;
   max-width: 100%;
-  height: 80vh;
+  height: 60vh;
   /* border-radius: 10px; */
 }
 
 .productright {
-  flex: 1;
-  padding: 20px;
+  /* flex: 1; */
+  padding: 20px, 20px;
+  max-width: 700px;
+  width: 100%;
 }
 
 .productname {
@@ -823,9 +835,24 @@ button.remove {
 }
 
 .productsize {
-  padding: 10px 0px;
+  padding: 20px 0px;
   font-size: 16px;
   color: #333;
+  display: flex;
+  justify-content: left;
+}
+.pdth {
+  font-size: 19px;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+
+.pdts {
+  padding: 0px 10px;
+    border: 1px solid navy;
+    margin: 0px 16px;
+    font-size: 25px;
+    font-weight: 500;
 }
 
 .productOffers {
@@ -1240,4 +1267,46 @@ input.search-input {
 
 .olsRslit2d {
   padding: 0px 30px;
+}
+
+.productpath {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 5px 0px 20px 0px;
+  cursor: pointer;
+}
+#pig {
+  width: 20px;
+  height: 15px;
+}
+
+p#sps {
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: 600;
+  color: #388e3c;
+}
+p.pricess {
+  font-size: 30px;
+  font-weight: 500;
+  font-family: sans-serif;
+  color: black;
+}
+.productrating {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 69px;
+  background: #388e3c;
+  padding: 1px 8px;
+  border-radius: 5px;
+}
+.ptrtgi {
+  padding: 0px 0px 0px 8px;
+  display: flex;
+  align-items: center;
 }
