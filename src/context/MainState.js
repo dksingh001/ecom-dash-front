@@ -39,8 +39,8 @@ const MainState = (props) => {
       return data;
     }
     
-    const addtocart = async(id) => {
-      const data = await post (`${baseUrl}/api/cw/addtocart/${id}`)
+    const addtocart = async(id, productId) => {
+      const data = await post (`${baseUrl}/api/cw/addtocart/${id}`, { productId }, true)
       return data;
     }
 

@@ -6,9 +6,10 @@ import rightlogo from "../../components/Assest/img/right arrow.jpg";
 
 const Shopdetails = () => {
   const { id } = useParams();
-  const { getProductById, addtocart } = useMain(); // Assume this hook fetches a product by ID
+  const { getProductById, addtocart, addtowishlist } = useMain(); // Assume this hook fetches a product by ID
   const [product, setProduct] = useState([]);
-//  console.log(id)
+  const [cart, setCart] = useState([]);
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -30,11 +31,13 @@ const Shopdetails = () => {
 
   // console.log(product.price)
 
-  const AddtoCart = async () => {
+  const AddtoCart = async (productId) => {
     try {
-      const response = await addtocart(id); // Assuming `addtocart` is a function from your `useMain` hook that takes the product ID
-      console.log(response)
+      const response = await addtocart(id, productId);   // Assuming `addtocart` is a function from your `useMain` hook that takes the product ID
+      console.log("Product ID:", productId); // Ensure this logs the expected productId
+     console.log(id)
       if (response && response.success) {
+        setCart((predata) =>[...predata, response.data])
         console.log("Product added to cart successfully")
          // You can trigger a state update or navigate to the cart page here if needed
       } else {
@@ -44,8 +47,12 @@ const Shopdetails = () => {
       console.log("Error adding to product to cart", error)
     }
   };
-
+  // console.log(cart)
   const BuyNow = async () =>{
+
+  }
+
+  const Wishlist = async () =>{
 
   }
 
@@ -53,7 +60,7 @@ const Shopdetails = () => {
     <>
       <div id="product">
         <div className="productde">
-          <div className="productcontainer">
+          <div className="productcontainer" key={product.id}>
             <div className="productmultipleimg">
               <div className="imgcontainer">
                 <img src={pic} alt="" />
@@ -66,7 +73,7 @@ const Shopdetails = () => {
               </div>
             </div>
             <div className="productImg">
-              <div className="wishlistican">
+              <div className="wishlistican" onClick={()=>Wishlist(id)} >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="#bfc9ca"
@@ -88,10 +95,10 @@ const Shopdetails = () => {
                 <img src={product.image || pic} alt="" />
               </div>
               <div className="prtbton">
-                <button className="prtatc" onClick={AddtoCart}>
+                <button className="prtatc" onClick={()=>AddtoCart(id)}>
                   ADD TO CARD
                 </button>
-                <button className="prtbn" onClick={BuyNow}>BUY NOW</button>
+                <button className="prtbn" onClick={()=>BuyNow(id)}>BUY NOW</button>
               </div>
             </div>
             <div className="productright">

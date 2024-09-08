@@ -10,17 +10,25 @@ const Cart = () => {
   const FetchcartItem = async() =>{
     try {
       const data = await fetchallcartItem();
-      if (data.success) {
-        setCart(data.cart)
+      if (data  && data.success) {
+        // setCart(data.cartitems)
+        // setCart((predata) =>[...predata, data.cartitems])
+        if (Array.isArray(data.cartitems)) {
+          setCart(data.cartitems)
+        } else {
+          console.error("Fetch data is not an array", data.cartitems)
+        }
+      }else{
+        console.error("Failed to fetch cart Items", data?.message)
       }
     } catch (error) {
-      console.error("Error fetching cart Items")
+      console.error("Error fetching cart Items", error)
     }
 
   }
   FetchcartItem()
   }, [fetchallcartItem])
-  console.log(cart)
+  // console.log(cart)
 
   return (
     <>
