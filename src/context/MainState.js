@@ -54,8 +54,8 @@ const MainState = (props) => {
     return data;
   }
 
-  const addtowishlist = async(id)=>{
-    const data = await post(`${baseUrl}/api/cw/addtowishlist/${id}`, true)
+  const addtowishlist = async(id, productId)=>{
+    const data = await post(`${baseUrl}/api/cw/addtowishlist/${id}`,{productId}, true)
     return data;
   }
 
