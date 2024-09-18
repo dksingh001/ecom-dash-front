@@ -9,12 +9,13 @@ const Shopdetails = () => {
   const { getProductById, addtocart, addtowishlist } = useMain(); // Assume this hook fetches a product by ID
   const [product, setProduct] = useState([]);
   const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const data = await getProductById(id);
-        if ( data.success) {
+        if (data.success) {
           setProduct(data.data);
         }
         // console.log("fetch product:", data);
@@ -33,28 +34,36 @@ const Shopdetails = () => {
 
   const AddtoCart = async (productId) => {
     try {
-      const response = await addtocart(id, productId);   // Assuming `addtocart` is a function from your `useMain` hook that takes the product ID
-      console.log("Product ID:", productId); // Ensure this logs the expected productId
-     console.log(id)
+      const response = await addtocart(id, productId); // Assuming `addtocart` is a function from your `useMain` hook that takes the product ID
+      //   console.log("Product ID:", productId); // Ensure this logs the expected productId
+      //  console.log(id)
       if (response && response.success) {
-        setCart((predata) =>[...predata, response.data])
-        console.log("Product added to cart successfully")
-         // You can trigger a state update or navigate to the cart page here if needed
+        setCart((predata) => [...predata, response.data]);
+        console.log("Product added to cart successfully");
+        // You can trigger a state update or navigate to the cart page here if needed
       } else {
-        console.log("Failed to add product to cart")
+        console.log("Failed to add product to cart");
       }
     } catch (error) {
-      console.log("Error adding to product to cart", error)
+      console.log("Error adding to product to cart", error);
     }
   };
   // console.log(cart)
-  const BuyNow = async () =>{
+  const BuyNow = async () => {};
 
-  }
-
-  const Wishlist = async () =>{
-
-  }
+  const Wishlist = async (productId) => {
+    try {
+      const response = await addtowishlist(id, productId);
+      if (response && response.success) {
+        setWishlist((predata) => [...predata, response.data]);
+        console.log("Product added to to wishlist successfully");
+      } else {
+        console.log("Failed to add  product to wishlist");
+      }
+    } catch (error) {
+      console.log("Error adding to product to wishlist");
+    }
+  };
 
   return (
     <>
@@ -73,7 +82,7 @@ const Shopdetails = () => {
               </div>
             </div>
             <div className="productImg">
-              <div className="wishlistican" onClick={()=>Wishlist(id)} >
+              <div className="wishlistican" onClick={() => Wishlist(id)}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="#bfc9ca"
@@ -95,10 +104,12 @@ const Shopdetails = () => {
                 <img src={product.image || pic} alt="" />
               </div>
               <div className="prtbton">
-                <button className="prtatc" onClick={()=>AddtoCart(id)}>
+                <button className="prtatc" onClick={() => AddtoCart(id)}>
                   ADD TO CARD
                 </button>
-                <button className="prtbn" onClick={()=>BuyNow(id)}>BUY NOW</button>
+                <button className="prtbn" onClick={() => BuyNow(id)}>
+                  BUY NOW
+                </button>
               </div>
             </div>
             <div className="productright">
