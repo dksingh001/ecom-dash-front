@@ -15,6 +15,7 @@ const Cart = () => {
         // setCart((predata) =>[...predata, data.cartitems])
         if (Array.isArray(data.cartitems)) {
           setCart(data.cartitems)
+        
         } else {
           console.error("Fetch data is not an array", data.cartitems)
         }
@@ -28,7 +29,7 @@ const Cart = () => {
   }
   FetchcartItem()
   }, [fetchallcartItem])
-  // console.log(cart)
+  console.log(cart)
 
   return (
     <>

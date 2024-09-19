@@ -1,7 +1,36 @@
-import React from "react";
+import {useState, useEffect} from "react";
 import pic from "../Assest/img/animation.png";
+import { useMain } from "../../hook/useMain";
 
 const Wishlist = () => {
+  const { fetchallwishlist } = useMain();
+  const [wishlist, setWishlist] = useState([]);
+
+  useEffect(() => {
+    const fetchWishlist = async () => {
+      try {
+        const data = await fetchallwishlist();
+
+        if (data) {
+          if (Array.isArray(data.wishlist)) {
+            setWishlist(data.wishlist);
+            console.log(data.wishlist);
+          } else {
+            console.error("Fetch data is not an array", data.wishlist);
+          }
+        } else {
+          console.error("Failed to fetch wishlist item", data?.message);
+        }
+      } catch (error) {
+        console.error("Failed to fetch wishlist item", error);
+      }
+    };
+
+    fetchWishlist();
+  }, [fetchallwishlist]);
+
+  console.log(wishlist);
+
   return (
     <>
       <div className="whctainr">
