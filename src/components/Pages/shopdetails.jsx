@@ -4,12 +4,24 @@ import { useParams } from "react-router-dom";
 import { useMain } from "../../hook/useMain";
 import rightlogo from "../../components/Assest/img/right arrow.jpg";
 
+const Modal = ({ message, message1, onClose }) => {
+  return (
+    <div className="modal">
+      <div className="modal-content">
+        <p>{message} {message1}</p>
+      </div>
+    </div>
+  );
+};
+
 const Shopdetails = () => {
   const { id } = useParams();
   const { getProductById, addtocart, addtowishlist } = useMain(); // Assume this hook fetches a product by ID
   const [product, setProduct] = useState([]);
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
+  const [message, setMessage] = useState("")
+  const [message1, setMessage1] = useState("")
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -39,16 +51,27 @@ const Shopdetails = () => {
       //  console.log(id)
       if (response && response.success) {
         setCart((predata) => [...predata, response.data]);
-        console.log("Product added to cart successfully");
+        setMessage(response.message)        
         // You can trigger a state update or navigate to the cart page here if needed
+
+        setTimeout(()=>{
+        setMessage("")
+        }, 2000)
       } else {
-        console.log("Failed to add product to cart");
+        setMessage("Failed to add product to cart");
+        setTimeout(() => {
+          setMessage("")
+        }, 2000);
       }
     } catch (error) {
-      console.log("Error adding to product to cart", error);
+      setMessage("Error adding to product to cart", error);
+
+      setTimeout(() => {
+        setMessage("")
+      }, 2000);
     }
   };
-  // console.log(cart)
+  // console.log(message)
   const BuyNow = async () => {};
 
   const Wishlist = async (productId) => {
@@ -56,7 +79,11 @@ const Shopdetails = () => {
       const response = await addtowishlist(id, productId);
       if (response && response.success) {
         setWishlist((predata) => [...predata, response.data]);
-        console.log("Product added to to wishlist successfully");
+        setMessage1(response.message);
+
+        setTimeout(() => {
+          setMessage1("")
+        }, 2000);
       } else {
         console.log("Failed to add  product to wishlist");
       }
@@ -113,6 +140,14 @@ const Shopdetails = () => {
               </div>
             </div>
             <div className="productright">
+              {/* <h3 className="messageinfo"> {message && <p>{message}</p>}</h3>
+             <h3 className="messageinfo"> {message1 && <p>{message1}</p>}</h3> */}
+              {message && (
+                <Modal message={message} onClose={() => setMessage("")} />
+              )}
+              {message1 && (
+                <Modal message1={message1} onClose={() => setMessage1("")} />
+              )}
               <div className="productpath">
                 Home <img src={rightlogo} id="pig" /> Shop{" "}
                 <img src={rightlogo} id="pig" /> shopdetails
