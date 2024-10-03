@@ -8,7 +8,9 @@ const Modal = ({ message, message1, onClose }) => {
   return (
     <div className="modal">
       <div className="modal-content">
-        <p>{message} {message1}</p>
+        <p>
+          {message} {message1}
+        </p>
       </div>
     </div>
   );
@@ -20,8 +22,8 @@ const Shopdetails = () => {
   const [product, setProduct] = useState([]);
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
-  const [message, setMessage] = useState("")
-  const [message1, setMessage1] = useState("")
+  const [message, setMessage] = useState("");
+  const [message1, setMessage1] = useState("");
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -51,23 +53,23 @@ const Shopdetails = () => {
       //  console.log(id)
       if (response && response.success) {
         setCart((predata) => [...predata, response.data]);
-        setMessage(response.message)        
+        setMessage(response.message);
         // You can trigger a state update or navigate to the cart page here if needed
 
-        setTimeout(()=>{
-        setMessage("")
-        }, 2000)
+        setTimeout(() => {
+          setMessage("");
+        }, 2000);
       } else {
         setMessage("Failed to add product to cart");
         setTimeout(() => {
-          setMessage("")
+          setMessage("");
         }, 2000);
       }
     } catch (error) {
       setMessage("Error adding to product to cart", error);
 
       setTimeout(() => {
-        setMessage("")
+        setMessage("");
       }, 2000);
     }
   };
@@ -82,7 +84,7 @@ const Shopdetails = () => {
         setMessage1(response.message);
 
         setTimeout(() => {
-          setMessage1("")
+          setMessage1("");
         }, 2000);
       } else {
         console.log("Failed to add  product to wishlist");
@@ -185,7 +187,11 @@ const Shopdetails = () => {
                 <>
                   <div className="productsize">
                     <div className="pdth">Size</div>
-                    <div className="pdts">{product.size}</div>
+                    {product.size.map((item) => (
+                      <>
+                        <div className="pdts">{item}</div>
+                      </>
+                    ))}
                   </div>
                 </>
               ) : (

@@ -842,6 +842,7 @@ button.remove {
   justify-content: left;
 }
 .pdth {
+  padding: 0px 15px 0px 0px;
   font-size: 19px;
   font-weight: 500;
   font-family: sans-serif;
@@ -850,7 +851,7 @@ button.remove {
 .pdts {
   padding: 0px 10px;
     border: 1px solid navy;
-    margin: 0px 16px;
+    margin: 0px 5px;
     font-size: 25px;
     font-weight: 500;
 }
