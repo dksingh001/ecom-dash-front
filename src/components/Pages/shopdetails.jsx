@@ -159,9 +159,9 @@ const Shopdetails = () => {
               <div className="productprice">
                 <p id="sps">Special Price</p>
                 <div className="product-details-price">
-                  <p className="pricess">₹ {product.price}</p>
+                  <p className="pricess">₹ {product.disprice}</p>
                   <p id="discount">₹ {product.price} </p>
-                  <p className="percentage">60% off</p>
+                  <p className="percentage">{product.perceprice}</p>
                 </div>
               </div>
               <div className="productrating">

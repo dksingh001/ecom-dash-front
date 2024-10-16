@@ -76,9 +76,9 @@ const Shop = () => {
                         </div>
                         <div className="product_price">
                           <div class="item-details-price">
-                            <p className="price">₹ {item.price}</p>
-                            <p id="discount">₹720</p>
-                            <p className="percentage">60% off</p>
+                            <p className="price">₹ {item.disprice}</p>
+                            <p id="discount">₹ {item.price}</p>
+                            <p className="percentage">{item.perceprice}</p>
                           </div>
                         </div>
                       </Link>
