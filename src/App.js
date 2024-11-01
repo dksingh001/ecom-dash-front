@@ -16,6 +16,11 @@ import Giftcard from "./components/Pages/Giftcard";
 import Cart from "./components/Pages/Cart";
 import Shopdetails from "./components/Pages/shopdetails";
 import PrivateRoute from "./privateRoute/PrivateRoute";
+import Emptycart from "./components/Pages/emptycart";
+import Emptycart1 from "./components/Pages/emptycart1";
+import Wishlist1 from "./components/Pages/wishlist1";
+import Wishlist2 from "./components/Pages/wishlist2";
+
 
 
 function App() {
@@ -50,6 +55,10 @@ function App() {
             <Route path="/giftcard" element={<Giftcard />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/Shopdetails/:id" element={<Shopdetails />}></Route>
+            <Route path="/cart1" element={ <Emptycart /> } />
+            <Route path="/cart2" element={ <Emptycart1 /> } />
+            <Route path="/wishlist1" element={ <Wishlist1 /> } />
+            <Route path="/wishlist2" element={ <Wishlist2 /> } />
 
           </Routes>
           <Footer />
