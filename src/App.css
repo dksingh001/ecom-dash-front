@@ -1372,3 +1372,92 @@ h3.messageinfo {
   margin: 6px 0px;
   border-radius: 5px;
 }
+
+
+/* body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f3f3f3;
+} */
+
+.cart-container {
+  width: 100%;
+  max-width: 1400px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.cart-content {
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.image-placeholder img {
+  width: 250px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p a {
+  color: #007185;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.sign-in , .sign-up {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #14b1ffc2;
+  color: #333;
+}
+
+
+.sign-in:hover {
+  background-color: #14b1ffc2;
+}
+
+.sign-up {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+}
+
+.sign-up:hover {
+  background-color: #f3f3f3;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  h1 {
+      font-size: 1.2rem;
+  }
+  
+  button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+  }
+}
