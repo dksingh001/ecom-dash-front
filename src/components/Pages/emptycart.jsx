@@ -14,10 +14,10 @@ const emptycart = () => {
           </div>
           <div>
             <div>
-              <h1>Your Cart is empty</h1>
+              <h1 className="h1">Your Cart is empty</h1>
             </div>
             <div>
-              <p>
+              <p className="p">
                 <Link href="#">Shop today’s deals</Link>
               </p>
             </div>

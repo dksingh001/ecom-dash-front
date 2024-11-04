@@ -1406,7 +1406,7 @@ h3.messageinfo {
   margin-bottom: 20px;
 }
 
-h1 {
+.h1 {
   font-size: 1.5rem;
   color: #333;
   margin-bottom: 10px;
@@ -1452,11 +1452,15 @@ p a {
 
 /* Responsive */
 @media (max-width: 600px) {
-  h1 {
+  .cart-content{
+    display: flex;
+    flex-direction: column;
+  }
+  .h1 {
       font-size: 1.2rem;
   }
   
-  button {
+  .button {
       font-size: 0.9rem;
       padding: 8px 16px;
   }
