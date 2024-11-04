@@ -13,10 +13,10 @@ const wishlist1 = () => {
           </div>
           <div>
             <div>
-              <h1>Your wishlist is empty</h1>
+              <h1 className="h1">Your wishlist is empty</h1>
             </div>
             <div>
-              <p>
+              <p className="p">
                 <Link href="#">Shop today’s deals</Link>
               </p>
             </div>
