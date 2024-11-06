@@ -3,8 +3,9 @@ import pic from "../../components/Assest/img/animation.png";
 import { useMain } from "../../hook/useMain";
 
 const Cart = () => {
-  const { fetchallcartItem } = useMain();
+  const { fetchallcartItem, deletecartItem } = useMain();
   const [cart, setCart] = useState([]);
+  // const [delete, SetDelete] = useState()
 
   useEffect(() => {
     const FetchcartItem = async () => {
@@ -28,15 +29,34 @@ const Cart = () => {
     FetchcartItem();
   }, [fetchallcartItem]);
   // console.log(cart);
+  const Increasebtn = async () => {
 
+  }
+
+  const decresebtn = async () =>{
+    
+  }
+
+  const removeBtn = async (itemid) =>{
+  try {
+    const response = await deletecartItem(itemid)
+    if (response && response.success) {
+       setCart((preCart) => preCart.filter((item)=>item.id !== itemid))
+    } else {
+      console.error("Failed to delete item", response?.message);
+    }
+  } catch (error) {
+    console.error("Error deleting item", error)
+  }
+  }
   return (
     <>
       <div id="cart-pages">
         <div className="cart-2nd">
           <div className="left-caintainer">
             {cart &&
-              cart.map((item) => (
-                <div className="product-details">
+              cart.map((item, index) => (
+                <div className="product-details" key={index}>
                   <div class="cart-item">
                     <div className="ctms">
                       <div className="item-details-container">
@@ -63,15 +83,15 @@ const Cart = () => {
                       </div>
                       <div className="item-details-dcrinrsa-re">
                         <div className="decinr">
-                          <button className="nega">-</button>
+                          <button className="nega" onClick={decresebtn}>-</button>
                           <button className="count">1</button>
-                          <button className="pule">+</button>
+                          <button className="pule" onClick={Increasebtn}>+</button>
                         </div>
                         <div className="saflete">
                           <button className="savelater">SAVE FOR LATER</button>
                         </div>
                         <div className="remo">
-                          <button className="remove">REMOVE</button>
+                          <button className="remove" onClick={()=>removeBtn(item.id)}>REMOVE</button>
                         </div>
                       </div>
                     </div>
