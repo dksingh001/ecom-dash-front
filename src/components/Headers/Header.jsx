@@ -7,9 +7,11 @@ const Navbar = () => {
   const auth = localStorage.getItem("ecomtoken");
   const navigate = useNavigate();
   const { getUserdetailsbyId } = useMain();
+  const { fetchallcartItem } = useMain();
 
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [User, SetUser] = useState({});
+  const [cartcount, SetCartcount] = useState(0)
 
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
@@ -49,9 +51,30 @@ const Navbar = () => {
       }
     };
     fetchdata();
-  }, [getUserdetailsbyId]);
 
-  // console.log(User.name); // Check if the User object is populated
+    
+    const FetchcartItem = async () => {
+      try {
+        const data = await fetchallcartItem();
+        if (data && data.success) {
+          // setCart(data.cartitems)
+          // setCart((predata) =>[...predata, data.cartitems])
+          if (Array.isArray(data.cartitems)) {
+            SetCartcount(data.cartitems.length);
+          } else {
+            console.error("Fetch data is not an array", data.cartitems);
+          }
+        } else {
+          console.error("Failed to fetch cart Items", data?.message);
+        }
+      } catch (error) {
+        console.error("Error fetching cart Items", error);
+      }
+    };
+    FetchcartItem();
+  }, [getUserdetailsbyId, fetchallcartItem]);
+
+  // console.log(cartcount); // Check if the User object is populated
   return (
     <>
       <nav className="bg-white border-gray-200 dark:bg-zinc-900" id="header_bg">
@@ -406,7 +429,7 @@ const Navbar = () => {
                 className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
                 id="right-manu"
               >
-                {/* <-- acrt icon -----> */}
+                {/* <-- a crt icon -----> */}
                 <div className="parent_icon">
                   <div className="icon">
                     <Link to="/cart">
@@ -425,7 +448,7 @@ const Navbar = () => {
                         />
                       </svg>
                     </Link>
-                    <span id="Count">0</span>
+                    <span id="Count">{cartcount}</span>
                   </div>
                 </div>
 
