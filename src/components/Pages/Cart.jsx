@@ -2,10 +2,24 @@ import React, { useEffect, useState } from "react";
 import pic from "../../components/Assest/img/animation.png";
 import { useMain } from "../../hook/useMain";
 
+const Modal = ({ message, message1, onClose }) => {
+  return (
+    <div className="modal">
+      <div className="modal-content">
+        <p>
+          {message}
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const Cart = () => {
   const { fetchallcartItem, deletecartItem } = useMain();
   const [cart, setCart] = useState([]);
   // const [delete, SetDelete] = useState()
+  const [message, setMessage] = useState("");
+  const [count, setCount] = useState(1);
 
   useEffect(() => {
     const FetchcartItem = async () => {
@@ -30,25 +44,31 @@ const Cart = () => {
   }, [fetchallcartItem]);
   // console.log(cart);
   const Increasebtn = async () => {
+    setCount((preitem)=> preitem + 1 )
+  };
 
-  }
+  const decresebtn = async () => {
+    setCount((preitem) => Math.max(preitem - 1, 1))
+  };
 
-  const decresebtn = async () =>{
-    
-  }
+  const removeBtn = async (itemid) => {
+    try {
+      console.log(itemid);
+      const response = await deletecartItem(itemid);
+      if (response && response.success) {
+        setCart((preCart) => preCart.filter((item) => item.id !== itemid));
+        setMessage(response.message);
 
-  const removeBtn = async (itemid) =>{
-  try {
-    const response = await deletecartItem(itemid)
-    if (response && response.success) {
-       setCart((preCart) => preCart.filter((item)=>item.id !== itemid))
-    } else {
-      console.error("Failed to delete item", response?.message);
+        setTimeout(() => {
+          setMessage("");
+        }, 2000);
+      } else {
+        console.error("Failed to delete item", response?.message);
+      }
+    } catch (error) {
+      console.error("Error deleting item", error);
     }
-  } catch (error) {
-    console.error("Error deleting item", error)
-  }
-  }
+  };
   return (
     <>
       <div id="cart-pages">
@@ -56,9 +76,15 @@ const Cart = () => {
           <div className="left-caintainer">
             {cart &&
               cart.map((item, index) => (
-                <div className="product-details" key={index}>
+                <div className="product-details" key={item || item._id}>
                   <div class="cart-item">
                     <div className="ctms">
+                      {message && (
+                        <Modal
+                          message={message}
+                          onClose={() => setMessage("")}
+                        />
+                      )}
                       <div className="item-details-container">
                         <div className="item-details-img">
                           <img
@@ -83,15 +109,24 @@ const Cart = () => {
                       </div>
                       <div className="item-details-dcrinrsa-re">
                         <div className="decinr">
-                          <button className="nega" onClick={decresebtn}>-</button>
-                          <button className="count">1</button>
-                          <button className="pule" onClick={Increasebtn}>+</button>
+                          <button className="nega" onClick={decresebtn}>
+                            -
+                          </button>
+                          <button className="count">{count}</button>
+                          <button className="pule" onClick={Increasebtn}>
+                            +
+                          </button>
                         </div>
                         <div className="saflete">
                           <button className="savelater">SAVE FOR LATER</button>
                         </div>
                         <div className="remo">
-                          <button className="remove" onClick={()=>removeBtn(item.id)}>REMOVE</button>
+                          <button
+                            className="remove"
+                            onClick={() => removeBtn(item.id || item._id)}
+                          >
+                            REMOVE
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -140,8 +175,8 @@ const Cart = () => {
             <div class="price-details">
               <h2>PRICE DETAILS</h2>
               <div class="detail">
-                <span>Price (2 items)</span>
-                <span>₹6,898</span>
+                <span>Price</span>
+                <span>₹6,898 </span>
               </div>
               <div class="detail">
                 <span>Discount</span>
