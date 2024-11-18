@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useMain } from "../../hook/useMain";
+import { NotificationContainer, NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 
 const Login = () => {
@@ -19,27 +21,40 @@ const Login = () => {
       [name]: value,
     }));
   };
-
-  const Submitdata = async(e) => {
+  const Submitdata = async (e) => {
     e.preventDefault();
-    // console.log(formdata)
-    const {email, password} = formdata;
-
-    const data = await login({email, password});
+  
+    const { email, password } = formdata;
+  
     try {
+      // Attempt to login with the credentials
+      const data = await login({ email, password });
+  
       if (data && data.token) {
         const { id } = data.user;
-        localStorage.setItem("ecomtoken", JSON.stringify({token:data.token}));
-        // console.log("login successfully", data)
-        localStorage.setItem("userId", id)
-        navigate("/")
-      }
-      else{
-        console.log("login is failed")
+  
+        // Save token and user ID in localStorage
+        localStorage.setItem("ecomtoken", JSON.stringify({ token: data.token }));
+        localStorage.setItem("userId", id);
+  
+        // Show success notification
+        NotificationManager.success('Login successful!', 'Success', 3000);
+  
+        // Navigate to home page
+        navigate("/");
+      } else {
+        // Show error notification if login failed
+        NotificationManager.error('Login failed. Please check your credentials.', 'Error', 3000);
       }
     } catch (error) {
+      // Show error notification in case of an exception
+      NotificationManager.error('An error occurred during login. Please try again.', 'Error', 3000);
       console.log("Error during login:", error);
     }
+  };
+  
+  const testNotification = () => {
+    NotificationManager.success('Test notification', 'Success', 3000);
   };
 
   return (
@@ -48,7 +63,7 @@ const Login = () => {
         <div className="container">
           <div className="sub-container">
             <h2>Login Form</h2>
-            <form action="" onClick={Submitdata}>
+            {/* <form action="" onSubmit={Submitdata}> */}
               <div id="">
                 <div className="form-group">
                   <div>
@@ -89,16 +104,19 @@ const Login = () => {
               </div>
               <div id="button">
                 <div className="button">
-                  <button type="submit">Login</button>
+                  <button onClick={Submitdata}>Login</button>
+                  {/* <button onClick={testNotification}>Test Notification</button> Manual test */}
+
                 </div>
               </div>
               <span id="spantag">
-                Don't have an account?{" "}
+                Don't have an account?
                 <Link to="/signup">
                   <span id="signlogin">Sign up</span>
                 </Link>
               </span>
-            </form>
+            {/* </form> */}
+            <NotificationContainer /> {/* Required to display notifications */}
           </div>
         </div>
       </div>

@@ -17,12 +17,12 @@ const wishlist1 = () => {
             </div>
             <div>
               <p className="p">
-                <Link href="#">Shop today’s deals</Link>
+                <Link to="/shop">Shop today’s deals</Link>
               </p>
             </div>
             <div className="buttons">
-              <button className="sign-in">Sign in to your account</button>
-              <button className="sign-up">Sign up now</button>
+              <Link to="/signup" className="sign-in">Sign in to your account</Link>
+              <Link to="/signup" className="sign-up">Sign up now</Link>
             </div>
           </div>
         </div>
