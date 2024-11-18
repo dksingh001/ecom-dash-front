@@ -702,14 +702,14 @@ const Navbar = () => {
                   </li>
                 </ul>
               </div>
-
+              {/* cart */}
               <div
                 className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
                 id="right-manu"
               >
                 <div className="parent_icon">
                   <div className="icon">
-                    <Link to="/cart">
+                    <Link to="/cart1">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="black"
@@ -756,8 +756,8 @@ const Navbar = () => {
 
                     <ul className="py-2" aria-labelledby="user-menu-button">
                       <li>
-                        <a
-                          href="/profile"
+                        <Link
+                          to="/signup"
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                           <div className="phitxt">
@@ -779,11 +779,11 @@ const Navbar = () => {
                             </div>
                             <div className="hpptxt">My Profile</div>
                           </div>
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href="/order"
+                        <Link
+                          to="/signup"
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                           <div className="phitxt">
@@ -805,11 +805,11 @@ const Navbar = () => {
                             </div>
                             <div className="hpptxt">My order</div>
                           </div>
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href="/wishlist"
+                        <Link
+                          to="/wishlist1"
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                           <div className="phitxt">
@@ -831,11 +831,11 @@ const Navbar = () => {
                             </div>
                             <div className="hpptxt">Whishlist</div>
                           </div>
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href="/giftcard"
+                        <Link
+                          to="/signup"
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                           <div className="phitxt">
@@ -857,7 +857,7 @@ const Navbar = () => {
                             </div>
                             <div className="hpptxt">Gift Card</div>
                           </div>
-                        </a>
+                        </Link>
                       </li>
                       {/* <li>
                         <div className="phitxt block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
