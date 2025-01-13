@@ -12,57 +12,93 @@ const Modal = ({ message, message1, onClose }) => {
   );
 };
 
-const Cart = () => {
+const Cart = ( ) => {
   const { fetchallcartItem, deletecartItem } = useMain();
   const [cart, setCart] = useState([]);
   // const [delete, SetDelete] = useState()
   const [message, setMessage] = useState("");
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState([]);
   const [totalprice, SetTotalprice]  = useState(0)
-  const [cartItem, setcartItem] = useState(cart || [])
+  console.log(totalprice)
+  console.log(count)
 
   useEffect(() => {
     const FetchcartItem = async () => {
       try {
         const data = await fetchallcartItem();
-        if (data && data.success) {
-          // setCart(data.cartitems)
-          // setCart((predata) =>[...predata, data.cartitems])
-          if (Array.isArray(data.cartitems)) {
-            setCart(data.cartitems);
-          } else {
-            console.error("Fetch data is not an array", data.cartitems);
-          }
+        if (data?.success && Array.isArray(data.cartitems)) {
+          // Add default count if missing or invalid
+          const processedCart = data.cartitems.map((item) => ({
+            ...item,
+        //     // count: item.count || 1, // Default count to 1 if it's missing
+            count: isNaN(item.count) ? 1 : item.count, // Default count to 1 if it's missing or invalid
+          }));
+          setCart(processedCart);
+          console.log("Processed Cart Items:", processedCart);
         } else {
-          console.error("Failed to fetch cart Items", data?.message);
+          console.error("Failed to fetch cart items:", data?.message);
         }
       } catch (error) {
-        console.error("Error fetching cart Items", error);
+        console.error("Error fetching cart items:", error);
       }
     };
+  
     FetchcartItem();
+  }, [fetchallcartItem]);
+  
+
+  // useEffect(() => {
+  //   const FetchcartItem = async () => {
+  //     try {
+  //       const data = await fetchallcartItem();
+  //       if (data && data.success) {
+  //         // setCart(data.cartitems)
+  //         // setCart((predata) =>[...predata, data.cartitems])
+  //         if (Array.isArray(data.cartitems)) {
+  //           setCart(data.cartitems);
+  //         } else {
+  //           console.error("Fetch data is not an array", data.cartitems);
+  //         }
+  //       } else {
+  //         console.error("Failed to fetch cart Items", data?.message);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching cart Items", error);
+  //     }
+  //   };
+  //   FetchcartItem();
+  // }, [fetchallcartItem]);
+
+  useEffect(()=>{
    // Calculate total price whenever cartItems changes 
    const total = cart.reduce((acc, item)=> acc + item.count * item.price, 0)
    SetTotalprice(total);
 
-  }, [fetchallcartItem, cartItem]);
+  },[cart])
+
 
   // console.log(cart);
   const Increasebtn = async (index) => {
-    // setCount((preitem) => preitem + 1);
-    const updateCart = [...cartItem];
-    updateCart[index].count += 1;
-    setcartItem(updateCart)
+    setCart((prevCart) => {
+      const updatedCart = [...prevCart];
+      // updatedCart[index].count = (updatedCart[index].count || 1) + 1; // Increment count
+      updatedCart[index].count += 1;
+      // console.log(updatedCart)
+      return updatedCart;
+    });
   };
 
   const decresebtn = async (index) => {
     // setCount((preitem) => Math.max(preitem - 1, 1));
-    const updatedcart = [...cartItem];
-    if (updatedcart[index].count > 1) {
-      updatedcart[index].count -= 1;
-      setcartItem(updatedcart)
-    }
+    setCart((prevCart) => {
+      const updatedCart = [...prevCart];
+      if (updatedCart[index].count > 1) {
+        updatedCart[index].count -= 1;
+      }
+      return updatedCart;
+    });
   };
+
 
   const removeBtn = async (itemid) => {
     try {
@@ -113,10 +149,10 @@ const Cart = () => {
                             </div>
                             <div className="item-details-size">
                               <p id="ss">Size: </p>
-                              <p id="ssl">XL</p>
+                              <p id="ssl">{item.size}</p>
                             </div>
                             <div class="item-details-price">
-                              <p className="price">₹2,399</p>
+                              <p className="price">₹ {item.price}</p>
                               <p id="discount">₹720</p>
                               <p className="percentage">60% off</p>
                             </div>
@@ -127,7 +163,7 @@ const Cart = () => {
                             <button className="nega" onClick={()=>decresebtn(index)}>
                               -
                             </button>
-                            <button className="count">{count}</button>
+                            <button className="count">{item.count}</button>
                             <button className="pule" onClick={()=>Increasebtn(index)}>
                               +
                             </button>
