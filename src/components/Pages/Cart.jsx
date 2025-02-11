@@ -19,8 +19,8 @@ const Cart = ( ) => {
   const [message, setMessage] = useState("");
   const [count, setCount] = useState([]);
   const [totalprice, SetTotalprice]  = useState(0)
-  console.log(totalprice)
-  console.log(count)
+  // console.log(totalprice)
+  // console.log(count)
 
   useEffect(() => {
     const FetchcartItem = async () => {
@@ -30,11 +30,11 @@ const Cart = ( ) => {
           // Add default count if missing or invalid
           const processedCart = data.cartitems.map((item) => ({
             ...item,
-        //     // count: item.count || 1, // Default count to 1 if it's missing
+        // count: item.count || 1, // Default count to 1 if it's missing
             count: isNaN(item.count) ? 1 : item.count, // Default count to 1 if it's missing or invalid
           }));
           setCart(processedCart);
-          console.log("Processed Cart Items:", processedCart);
+          // console.log("Processed Cart Items:", processedCart);
         } else {
           console.error("Failed to fetch cart items:", data?.message);
         }
@@ -81,9 +81,9 @@ const Cart = ( ) => {
   const Increasebtn = async (index) => {
     setCart((prevCart) => {
       const updatedCart = [...prevCart];
-      // updatedCart[index].count = (updatedCart[index].count || 1) + 1; // Increment count
-      updatedCart[index].count += 1;
-      // console.log(updatedCart)
+      updatedCart[index].count = (updatedCart[index].count || 1) + 1; // Increment count
+      // updatedCart[index].count += 1;
+      console.log(updatedCart)
       return updatedCart;
     });
   };
@@ -110,7 +110,7 @@ const Cart = ( ) => {
 
         setTimeout(() => {
           setMessage("");
-        }, 2000);
+        }, );
       } else {
         console.error("Failed to delete item", response?.message);
       }

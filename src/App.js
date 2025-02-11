@@ -20,15 +20,26 @@ import Emptycart from "./components/Pages/emptycart";
 import Emptycart1 from "./components/Pages/emptycart1";
 import Wishlist1 from "./components/Pages/wishlist1";
 import Wishlist2 from "./components/Pages/wishlist2";
+import { NotificationContainer, NotificationManager } from "react-notifications";
 
 
 
 function App() {
+
+  const notify = (status, message) =>{
+    if (status) {
+      NotificationManager.success(message, "success!")
+    } else {
+      NotificationManager.error(message, "Failed! ")
+    }
+  }
+
   return (
     <>
       <MainState>
         <BrowserRouter>
           <Header />
+          <NotificationContainer />
           <Routes>
             <Route to={PrivateRoute}>
             <Route path="/" element={<Home />}></Route>
@@ -47,7 +58,7 @@ function App() {
             <Route path="/shop" element={<Shop />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
-            <Route path="/login" element={<Login />}></Route>
+            <Route path="/login" element={<Login notify={notify} />}></Route>
             <Route path="/signup" element={<Signup />}></Route>
             <Route path="/profile" element={<Profile />}></Route>
             <Route path="/order" element={<Order />}></Route>

@@ -24,6 +24,7 @@ const Shopdetails = () => {
   const [wishlist, setWishlist] = useState([]);
   const [message, setMessage] = useState("");
   const [message1, setMessage1] = useState("");
+  const [selectSize, setSelectSize] = useState(null)
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -65,6 +66,9 @@ const Shopdetails = () => {
           setMessage("");
         }, 2000);
       }
+      if (!selectSize) {
+        alert("please select the size")
+      }
     } catch (error) {
       setMessage("Error adding to product to cart", error);
 
@@ -94,6 +98,11 @@ const Shopdetails = () => {
     }
   };
 
+   const handlesize = (size) =>{
+   setSelectSize(size)
+   }
+
+   console.log(selectSize)
   return (
     <>
       <div id="product">
@@ -189,7 +198,14 @@ const Shopdetails = () => {
                     <div className="pdth">Size</div>
                     {product.size.map((item) => (
                       <>
-                        <div className="pdts">{item}</div>
+                        <div className={`pdts ${selectSize ===  item ? "selected": "" }`}
+                        onClick={()=> handlesize(item)}
+                        style={{
+                          border:selectSize === item ? "2px solid blue" :"1px solid gray",
+                          //  padding:"5px",
+                          cursor:"pointer"
+                        }}
+                        >{item}</div>
                       </>
                     ))}
                   </div>
@@ -197,6 +213,7 @@ const Shopdetails = () => {
               ) : (
                 <> </>
               )}
+              <p style={{ marginTop: "10px", fontWeight: "bold" }}> {selectSize ? `Selected size ${selectSize} ` : ""}</p>
               <div className="productOffers">Available offers</div>
             </div>
           </div>

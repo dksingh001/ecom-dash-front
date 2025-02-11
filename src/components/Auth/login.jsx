@@ -54,7 +54,7 @@ const Login = () => {
   };
   
   const testNotification = () => {
-    NotificationManager.success('Test notification', 'Success', 3000);
+    NotificationManager.success('Test notification', 'Success !', 1000);
   };
 
   return (
@@ -63,7 +63,7 @@ const Login = () => {
         <div className="container">
           <div className="sub-container">
             <h2>Login Form</h2>
-            {/* <form action="" onSubmit={Submitdata}> */}
+            <form action="" onSubmit={Submitdata}>
               <div id="">
                 <div className="form-group">
                   <div>
@@ -104,7 +104,7 @@ const Login = () => {
               </div>
               <div id="button">
                 <div className="button">
-                  <button onClick={Submitdata}>Login</button>
+                  <button >Login</button>
                   {/* <button onClick={testNotification}>Test Notification</button> Manual test */}
 
                 </div>
@@ -115,7 +115,7 @@ const Login = () => {
                   <span id="signlogin">Sign up</span>
                 </Link>
               </span>
-            {/* </form> */}
+            </form>
             <NotificationContainer /> {/* Required to display notifications */}
           </div>
         </div>
