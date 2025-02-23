@@ -29,7 +29,7 @@ const Login = () => {
     try {
       // Attempt to login with the credentials
       const data = await login({ email, password });
-  
+      console.log(data)
       if (data && data.token) {
         const { id } = data.user;
   

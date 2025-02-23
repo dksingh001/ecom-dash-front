@@ -75,7 +75,7 @@ function App() {
           <Footer />
         </BrowserRouter>
       </MainState>
-      {/* <Header />
+      {/* <Header /
        <Footer /> */}
     </>
   );
