@@ -57,14 +57,14 @@ const Shopdetails = () => {
         setMessage(response.message);
         // You can trigger a state update or navigate to the cart page here if needed
 
-        setTimeout(() => {
-          setMessage("");
-        }, 2000);
+        // setTimeout(() => {
+        //   setMessage("");
+        // }, 2000);
       } else {
         setMessage("Failed to add product to cart");
-        setTimeout(() => {
-          setMessage("");
-        }, 2000);
+        // setTimeout(() => {
+        //   setMessage("");
+        // }, 2000);
       }
       if (!selectSize) {
         alert("please select the size")
@@ -72,9 +72,9 @@ const Shopdetails = () => {
     } catch (error) {
       setMessage("Error adding to product to cart", error);
 
-      setTimeout(() => {
-        setMessage("");
-      }, 2000);
+      // setTimeout(() => {
+      //   setMessage("");
+      // }, 2000);
     }
   };
   // console.log(message)
@@ -87,9 +87,9 @@ const Shopdetails = () => {
         setWishlist((predata) => [...predata, response.data]);
         setMessage1(response.message);
 
-        setTimeout(() => {
-          setMessage1("");
-        }, 2000);
+        // setTimeout(() => {
+        //   setMessage1("");
+        // }, 2000);
       } else {
         console.log("Failed to add  product to wishlist");
       }
@@ -102,7 +102,7 @@ const Shopdetails = () => {
    setSelectSize(size)
    }
 
-   console.log(selectSize)
+  //  console.log(selectSize)
   return (
     <>
       <div id="product">
