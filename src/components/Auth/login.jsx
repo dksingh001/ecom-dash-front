@@ -34,8 +34,10 @@ const Login = () => {
         const { id } = data.user;
   
         // Save token and user ID in localStorage
-        localStorage.setItem("ecomtoken", JSON.stringify({ token: data.token }));
+        localStorage.setItem("ecomtoken", JSON.stringify(data.token ));
+        localStorage.setItem("user", JSON.stringify({ user: data.user }));
         localStorage.setItem("userId", id);
+
   
         // Show success notification
         NotificationManager.success('Login successful!', 'Success', 3000);

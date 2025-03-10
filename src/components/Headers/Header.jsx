@@ -56,6 +56,7 @@ const Navbar = () => {
     const FetchcartItem = async () => {
       try {
         const data = await fetchallcartItem();
+        console.log(data);
         if (data && data.success) {
           // setCart(data.cartitems)
           // setCart((predata) =>[...predata, data.cartitems])
