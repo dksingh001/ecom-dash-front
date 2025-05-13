@@ -10,6 +10,8 @@ const Shop = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // Fetch products from the API
+        
         const data = await getproducts();
         setProducts(data.allproduct);
         // console.log("fetch products:", data.allproduct);
