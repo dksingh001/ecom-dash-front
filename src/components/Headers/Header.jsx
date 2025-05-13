@@ -27,6 +27,7 @@ const Navbar = () => {
     navigate("/login");
   };
 
+
   useEffect(() => {
     const fetchdata = async () => {
       const userId = localStorage.getItem("userId");
@@ -56,7 +57,7 @@ const Navbar = () => {
     const FetchcartItem = async () => {
       try {
         const data = await fetchallcartItem();
-        console.log(data);
+        // console.log(data);
         if (data && data.success) {
           // setCart(data.cartitems)
           // setCart((predata) =>[...predata, data.cartitems])
@@ -73,6 +74,7 @@ const Navbar = () => {
       }
     };
     FetchcartItem();
+   
   }, [getUserdetailsbyId, fetchallcartItem]);
 
   // console.log(cartcount); // Check if the User object is populated

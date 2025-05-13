@@ -9,7 +9,7 @@ const Login = () => {
   const navigate = useNavigate();
   const { login } = useMain();
   const [formdata, setFromData] = useState({email:"", password:""});
-
+  
   const handlechange = (e) => {
     // setFromData((predata) => ({
     //   ...predata,

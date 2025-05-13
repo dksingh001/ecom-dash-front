@@ -50,12 +50,13 @@ const Shopdetails = () => {
   const AddtoCart = async (productId) => {
     try {
       const response = await addtocart(id, productId); // Assuming `addtocart` is a function from your `useMain` hook that takes the product ID
-      //   console.log("Product ID:", productId); // Ensure this logs the expected productId
-      //  console.log(id)
-      if (response && response.success) {
+    
+      if (response && response.success && response.token) {
         setCart((predata) => [...predata, response.data]);
         setMessage(response.message);
+        console.log(response.message);
         // You can trigger a state update or navigate to the cart page here if needed
+      
 
         setTimeout(() => {
           setMessage("");
